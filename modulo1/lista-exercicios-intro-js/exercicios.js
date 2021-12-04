@@ -106,10 +106,11 @@ function retornaUltimoElemento(array) {
 // EXERCÍCIO 11
 // implemente sua lógica aqui
 function trocaPrimeiroEUltimo(array) {
-  let arr = array.splice(1,3)
-  arr.push(array[0])
-  arr.unshift(array[array.length-1])
-  return arr
+  let newArray = array.shift()
+  let newArray1 = array.pop()
+  array.push(newArray)
+  array.unshift(newArray1)
+  return array
 
 }
 
@@ -128,16 +129,37 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
 
+  const anoAtual = Number(prompt("Digite o Ano Atual!"))
+  const anoNascimento = Number(prompt("Digite o ano do seu nascimento!"))
+  const anoEmissaoRg = Number(prompt("Digite o ano que foi emitido seu rg!"))
+
+  let idade = anoAtual - anoNascimento
+  const idadeRg = anoAtual - anoEmissaoRg
+
+  const renovaRgCincoAnos = idade <= 20 && idadeRg >= 5 
+  const renovaRgDezAnos = idade > 20 && idade <= 50 && idadeRg >= 10
+  const renovaRgQuinzeAnos = idade > 50 && idadeRg >= 15
+  
+  const verificaRenovacao = renovaRgCincoAnos || renovaRgDezAnos || renovaRgQuinzeAnos
+  console.log(verificaRenovacao )
+
 }
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
+  const anosMultQuatrocentos = (ano % 400 === 0) ||(ano % 4 === 0 && ano % 100 !== 0)
 
+  return anosMultQuatrocentos
 }
 
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
   // implemente sua lógica aqui
+  const maiorDeDezoito = prompt("Você tem mais de 18 anos? sim ou nao") === "sim"
+  const ensinoMedioCompleto = prompt("Você possui ensino médio completo? sim ou nao") === "sim"
+  const disponibilidade = prompt("Você possui disponibilidade exclusiva durante os horários do curso? sim ou nao") == "sim"
+
+  console.log(maiorDeDezoito && ensinoMedioCompleto && disponibilidade)
 
 }
