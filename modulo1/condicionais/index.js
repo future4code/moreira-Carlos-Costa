@@ -164,7 +164,7 @@ const vemAssistirComMigo = (generoFilme, valorIngresso) => {
 vemAssistirComMigo(generoFilme, valorIngresso)
 */
 
-/*2 .Questão
+//2 .Questão
 
 const nome = prompt("Digite seu nome completo!")
 const tipoDeJogo = prompt("Digitar IN indica internacional e DO indica doméstico: Digite uma das opções!")
@@ -172,43 +172,162 @@ const etapaDeJogo = prompt("SF indica semi-final, DT indica decisão de terceiro
 const categoria = prompt("Digite uma das opções 1, 2, 3 ou 4")
 const quantIngressos = Number(prompt("Digite a quantidade de ingressos que você quer comprar!"))
 
-const jogos = [
-    {   
-        categoria: "Categoria1",
-        jogos : {
-            SF : "1.320,00",
-            DT : "660,00",
-            FI : "1.980,00"
+const jogosOD = [
+    
+    {
+        categoria: 1,
+        jogos : [
+            {SF : 1320},
+            {DT : 660},
+            {FI : 1980}
 
-        }
+        ],
+        quantidade: quantIngressos
+
+    },
+    {
+        categoria: 2,
+        jogos : [
+            {SF : 880},
+            {DT : 440},
+            {FI : 1320}
+
+        ],
+        quantidade: quantIngressos
+    },
+    {
+        categoria: 3,
+        jogos : [
+            {SF : 550},
+            {DT : 330},
+            {FI : 880}
+
+        ],
+        quantidade: quantIngressos
+    },
+    {
+        categoria: 4,
+        jogos : [
+            {SF : 220},
+            {DT : 170},
+            {FI : 330}
+
+        ],
+        quantidade: quantIngressos
     }
-]
-const localJogo = (tipoJogo) => {
-    if(tipoJogo === "IN"){
 
+]
+const jogosIN = [
+    
+    {
+        categoria: 1,
+        jogos : [
+            {SF : 1320 * 4.10},
+            {DT : 660 * 4.10},
+            {FI : 1980 * 4.10}
+
+        ],
+        quantidade: quantIngressos
+    },
+    {
+        categoria: 2,
+        jogos : [
+            {SF : 880 * 4.10},
+            {DT : 440 * 4.10},
+            {FI : 1320 * 4.10}
+
+        ],
+        quantidade: quantIngressos
+    },
+    {
+        categoria: 3,
+        jogos : [
+            {SF : 550 * 4.10},
+            {DT : 330 * 4.10},
+            {FI : 880 * 4.10}
+
+        ],
+        quantidade: quantIngressos
+    },
+    {
+        categoria: 4,
+        jogos : [
+            {SF : 220 * 4.10},
+            {DT : 170 * 4.10},
+            {FI : 330 * 4.10}
+        ],
+        quantidade: quantIngressos
+    }
+
+]
+const localJogo = (jogosIN, jogosOD) => {
+    if(tipoDeJogo === "IN" ){
+        
         switch (etapaDeJogo) {
             case 'SF':
-                console.log("Semi-Final")
-                console.log()
+                console.log(
+                    `Tipo do jogo: Internacional
+                    \nEtapa do jogo: Semi-Final
+                    \nCategoria: ${jogosIN[categoria].categoria -1}
+                    \nQuantidade de Ingressos: ${quantIngressos} 
+                    \nValor do ingresso: U$ ${(jogosIN[0].jogos[0].SF).toFixed(2)}
+                    \nValor Total: U$ ${(jogosIN[0].jogos[0].SF * quantIngressos).toFixed(2)}`)
                 break;
             case 'DT':
-                console.log("Decisão de terceiro lugar")
+                console.log(
+                    `Tipo do jogo: Internacional 
+                    \nDecisão de terceiro lugar
+                    \nCategoria: ${jogosIN[categoria].categoria -1}
+                    \nQuantidade de Ingressos: ${quantIngressos} 
+                    \nValor do ingresso: U$ ${(jogosIN[1].jogos[1].DT).toFixed(2)}
+                    \nValor Total: U$ ${(jogosIN[1].jogos[1].DT * quantIngressos).toFixed(2)}`)
+
                 break;
             case 'FI':
-                console.log("Final")
-                break;
+                console.log(
+                    `Tipo do jogo: Internacional
+                    \nEtapa do jogo: Final
+                    \nCategoria: ${jogosIN[categoria].categoria -1}
+                    \nQuantidade de Ingressos: ${quantIngressos} 
+                    \nValor do ingresso: U$ ${(jogosIN[2].jogos[2].FI).toFixed(2)}
+                    \nValor Total: U$ ${(jogosIN[3].jogos[2].FI * quantIngressos).toFixed(2)}`)
+                break; 
             default:
                 break;
         }
-   }
-   else if(turno === "DO") {
+   }else if (tipoDeJogo === "DO"){
+    switch (etapaDeJogo) {
+        case 'SF':
+            console.log(
+                `Tipo do jogo: Nascional
+                \nEtapa do jogo: Semi-Final
+                \nCategoria: ${jogosOD[categoria].categoria -1}
+                \nQuantidade de Ingressos: ${quantIngressos} 
+                \nValor do ingresso: R$ ${(jogosOD[0].jogos[0].SF).toFixed(2)}
+                \nValor Total: R$ ${(jogosOD[0].jogos[0].SF * quantIngressos).toFixed(2)}`)
+            break;
+        case 'DT':
+            console.log(
+                `Tipo do jogo: Nascional 
+                \nDecisão de terceiro lugar
+                \nCategoria: ${jogosOD[categoria].categoria -1}
+                \nQuantidade de Ingressos: ${quantIngressos} 
+                \nValor do ingresso: R$ ${(jogosOD[1].jogos[1].DT).toFixed(2)}
+                \nValor Total: R$ ${(jogosOD[1].jogos[1].DT * quantIngressos).toFixed(2)}`)
 
-        console.log("Boa Tarde!")
-   }
-   else {
-        console.log("Por favor tente novamente: Digite M para (matutino) ou V para(Vespertino) ou N para (Noturno)!")
+            break;
+        case 'FI':
+            console.log(
+                `Tipo do jogo: Nascional
+                \nEtapa do jogo: Final
+                \nCategoria: ${jogosOD[categoria].categoria -1}
+                \nQuantidade de Ingressos: ${quantIngressos} 
+                \nValor do ingresso: R$ ${(jogosOD[(jogosOD[categoria].categoria - 2)].jogos[2].FI).toFixed(2)}
+                \nValor Total: R$ ${(jogosOD[2].jogos[2].FI * quantIngressos).toFixed(2)}`)
+            break; 
+        default:
+            break;
+    }
    }
 }
-console.log(localJogo(tipoDeJogo, etapaDeJogo, categoria, quantIngressos))
-
-*/
+localJogo(jogosIN, jogosOD)
