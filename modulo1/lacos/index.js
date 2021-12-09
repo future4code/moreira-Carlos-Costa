@@ -128,10 +128,10 @@
             console.log(newArray)
 
         e)
-
-            const arrayOriginal = [1, 2, 3, 4, 5, -6, 7, 8, 79, 10]
+        
+            const arrayOriginal =[1, 2, 3, 6, 7, 8, 9, 10]
               let maior = 0
-              let menor = 1
+              let menor = 71
 
               const maiorMenorNumero = (array) => {
                 for(let i = 0; i < array.length; i++){
@@ -140,12 +140,13 @@
                         maior = array[i]
 
                     }
-                    else if (!menor) menor = array[i]
-                    else if (array[i] < menor){
+                  }
+                  for(let i = 0; i < array.length; i++){
+                
+                    if(array[i] < menor){
                         menor = array[i]
 
                     }
-                
                   }
               }
              maiorMenorNumero(arrayOriginal)
@@ -154,3 +155,73 @@
 
 */
   
+
+/*----------------------------------  Desafios --------------------------------------*/
+
+/*1 .Questão
+
+
+confirm("Vamos jogar!!")
+let seuPalpite = Number(prompt("Digite um número!"))
+  let promptPalpite = 0
+
+    
+  const adivinhaNumero = () => {
+    for (let i = 0; seuPalpite !== promptPalpite; i++){
+
+        promptPalpite = Number(prompt("Chute um número."))
+        console.log(`O número chutado foi ${promptPalpite}`)
+
+        if (promptPalpite < seuPalpite){
+
+            console.log("Errou, o número escolhido é maior.")
+
+        } else if (promptPalpite > seuPalpite){
+
+            console.log("Errou, o número escolhido é menor.")
+
+        } else {
+
+            console.log("Acertou!!")
+            console.log(`O número de tentativas foi: ${i+1}`)
+
+        }
+    }
+  }
+    adivinhaNumero()
+*/
+/*2 .Questão
+    function sorteiNumero(max) {
+      return Math.floor(Math.random() * max + 1)
+    }
+    
+    let sorteiNumeroAleatorio = sorteiNumero(100)
+    console.log(sorteiNumeroAleatorio)
+    
+    let promptPalpite = 0
+    
+        
+      const adivinhaNumero = () => {
+        for (let i = 0; sorteiNumeroAleatorio !== promptPalpite; i++){
+        
+            promptPalpite = Number(prompt("Chute um número."))
+            console.log(`O número chutado foi ${promptPalpite}`)
+        
+            if (promptPalpite < sorteiNumeroAleatorio){
+            
+                console.log("Errou, o número escolhido é maior.")
+            
+            } else if (promptPalpite > sorteiNumeroAleatorio){
+            
+                console.log("Errou, o número escolhido é menor.")
+            
+            } else {
+            
+                console.log("Acertou!!")
+                console.log(`O número de tentativas foi: ${i+1}`)
+            
+            }
+        }
+      }
+    adivinhaNumero()
+*/
