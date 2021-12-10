@@ -1,19 +1,9 @@
-/**
- * EXEMPLO DE UTILIZAÇÃO DA 'comprarCarta'
- * 
- * 
-    const carta = comprarCarta(); // Sorteia uma carta. Por exemplo, o rei de ouros
-    
-    console.log(carta.texto) // imprime o texto da carta. Exemplo: "K♦️" (indica "K" de ouros)
-    console.log(carta.valor) // imprime o valor da carta (um número). Exemplo: 10 (dado que "K" vale 10)
- * 
- * 
- * 
- */
+console.log("Boas vindas ao jogo de Blackjack!")
 let jogar21 = confirm("Quer iniciar uma nova rodada?")
 
-if (jogar21 === true) {
-   let cartaUsuario1 = comprarCarta()
+// Aqui agente cria uma funcao iniciar 21 passando a logica para o jogo
+const iniciar21 = () =>{
+    let cartaUsuario1 = comprarCarta()
    let cartaUsuario2 = comprarCarta()
    let carta1Computador = comprarCarta()
    let carta2Computador = comprarCarta()
@@ -25,13 +15,24 @@ if (jogar21 === true) {
    console.log(`Computador - cartas: ${carta1Computador.texto} ${carta2Computador.texto} - ${pontuacaoComputador}`)
 
    if (pontuacaoJogador > pontuacaoComputador) {
+
        console.log("O usuário ganhou!")
-   } else if (pontuacaoComputador > pontuacaoJogador) {
+   } 
+   else if (pontuacaoComputador > pontuacaoJogador) {
+
        console.log("O computador ganhou!")
-   } else if (pontuacaoJogador === pontuacaoComputador) {
+   } 
+   else if (pontuacaoJogador === pontuacaoComputador) {
+
        console.log("Empate!")
    }
+}
+// Aqui invocamos a funcao dentro do if que so vai entrar na funcao se o usuario cliclar no ok
+if (jogar21 === true) {
 
-} else {
+   iniciar21()
+} 
+else {
+
    console.log("O jogo acabou")
 }
