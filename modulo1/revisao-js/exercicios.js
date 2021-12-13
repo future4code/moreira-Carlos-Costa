@@ -148,7 +148,7 @@ function retornaContasComSaldoAtualizado(contas) {
         contas.forEach((result) => {
             let totalCompras = 0
             result.compras.forEach((gasto)=> {
-                totalCompras += gasto
+                totalCompras = totalCompras + gasto
             })
             
             result.saldoTotal =  result.saldoTotal - totalCompras
@@ -159,7 +159,12 @@ function retornaContasComSaldoAtualizado(contas) {
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-    
+    return consultas.sort(function(a, b){
+        if(a.nome < b.nome){
+            return -1
+        }else {
+            return true
+        }})
 }
 
 // EXERCÍCIO 15B
