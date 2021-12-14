@@ -1,3 +1,4 @@
+```
 function calculaSalario(qtdeCarrosVendidos, valorTotalVendas) {
  let salarioFixo = 2000
  const comissaoVenda = qtdeCarrosVendidos * 100
@@ -6,4 +7,6 @@ function calculaSalario(qtdeCarrosVendidos, valorTotalVendas) {
  const salarioFinal = salarioFixo + comissaoVenda + comissaoValorTotal
  return salarioFinal
 }
-calculaSalario(3,130000)
+calculaSalario(3,130000).
+
+```
