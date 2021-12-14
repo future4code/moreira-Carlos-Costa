@@ -164,10 +164,21 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
             return -1
         }else {
             return true
-        }})
+        }
+    })
 }
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-   
-}
+    let consultaDia = consultas.sort((a, b) => {
+        let dataDiaA = a.dataDaConsulta.split('/')[0]
+        let dataDiaB = b.dataDaConsulta.split('/')[0]
+        return dataDiaA - dataDiaB
+    })
+    let consultaMes = consultaDia.sort((a, b) => {
+        let dataMesA = a.dataDaConsulta.split('/')[1]
+        let dataMesB = b.dataDaConsulta.split('/')[1]
+        return dataMesA - dataMesB
+    })
+    return consultaMes
+    }
