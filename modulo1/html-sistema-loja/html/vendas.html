@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/modulo1/html-sistema-loja/css/vendas.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -20,9 +21,123 @@
         <a href="./vendas.html">Vendas</a>
     </div>
 
-    <h2>Funcionários</h2>
+    <h2>Frente de Caixa</h2>
     <!-- Crie uma lista de funcionários usando as tags que você aprendeu hoje abaixo \/ -->
+    <div class="principal">
+        <div class= "lado_esquerdo">
+            <input class="input_pesquisa" placeholder="Digite um Produto" type="text">
+            <div class="imagem_produto">
+                <div class="imagem">
+                    <img src="/modulo1/html-sistema-loja/img/acucar.png" alt="Arroz Tio Jorge"/>
+                </div>
+            </div>
+            <div class="inputs_form">
+                <div class= "input">
+                    <label for="codigo">CÓDIGO </label>
+                    <input type="url" id="codigo" name="codigo">
+                </div>
+                
+                <div class= "input">
+                    <label for="produto">NOME DO PRODUTO </label>
+                    <!-- Adicione o id apropriado para o input abaixo -->
+                    <input type="text" id="produto" name="produto">
+                </div>
+                
+                <div class= "input">
+                    <label for="valor_unit">VALOR UNITÁRIO </label>
+                    <!-- Adicione o id apropriado e o type para receber números abaixo -->
+                    <input type="number" id="valor_unit" name="valor_unit">
+                </div>
+                <div class= "input">
+                    <label for="valor_total">VALOR TOTAL </label>
+                    <!-- Adicione o id apropriado e o type para receber números abaixo -->
+                    <input type="number" id="valor_total" name="valor_total">
+                </div>
+                <div class="form-add">
+                    <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
+                    <button type="submit">Adicionar</button>
+                </div>
+            </div>
+        </div>
+       
+        <div class= "lado_direito">
+            <div class ="descricao_produto">
+                <div class="cabecalho_descricao">
+                    <h3>CLIENTE: CLARICE SILVA</h3>
+                    <h3>VENDEDOR: CARLOS HENRIQUE</h3>
+                    <div>
+                        <table>
+                            <tr>
+                              <th>Qtd</th>
+                              <th style="width:50%">PRODUTO</th>
+                              <th>PREÇO</th>
+                              <th style="width:30%">SUB-TOTAL</th>
+                              <th></th>
+                            </tr>
+                            <tr>
+                              <td>10</td>
+                              <td>Arroz Achei</td>
+                              <td>5.50</td>
+                              <td>50.50</td>
+                              <td><i class="fa fa-edit"></i></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Leite em Pó</td>
+                                <td>6.00</td>
+                                <td>30.00</td>
+                                <td><i class="fa fa-edit"></i></td>
+                              </tr>
+                              <tr>
+                                <td>2</td>
+                                <td>Sla Nota10</td>
+                                <td>1.50</td>
+                                <td>3.00</td>
+                                <td><i class="fa fa-edit"></i></td>
+                              </tr>
+                              <tr>
+                                <td>5</td>
+                                <td>Massa de Milho</td>
+                                <td>2.50</td>
+                                <td>12.50</td>
+                                <td><i class="fa fa-edit"></i></td>
+                              </tr>
+                            <tr>
+                        </table>         
+                    </div>
+                     
+                    <div class="total_pedido">
+                    <h3>TOTAL DO PEDIDO</h3>
+                    <input type="text" />
+                    </div>
     
+                        <div class= "forma_pagamento">
+                    
+                            <select>
+                              <option value="0">Forma de Pagamento:</option>
+                              <option value="1">Dinheiro</option>
+                              <option value="2">Cartão de Credito</option>
+                              <option value="2">Cartão de Debito</option>
+                              <option value="2"> Pix </option>
+                            </select>
+                            
+                        </div>
+
+                    <div class="check_inline">
+                       <button style="background: rgb(200, 113, 13)">Aguardar</button>
+                       <button style="background: rgb(200, 50, 13)">Cancelar</button>
+                    </div>
+
+                    <div class="finalizar_venda">
+                        <button style="background: rgb(28, 97, 11)">Aguardar</button>
+                       
+                     </div>
+
+                </div>
+                
+            </div>
+        </div>    
+    </div>
 
     <div class="footer">
         <p>Siga-nos nas redes sociais!</p>
