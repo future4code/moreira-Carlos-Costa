@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.cabecalho {
+    font-size: 30px;
+    text-align: center;
+    color:rgb(72, 24, 185);
+    padding: 30px;
+    font-weight:bold;
+}
+.menu {
+
+    text-align: center;
+    margin-bottom: 30px;
+}
+.menu a {
+    
+    background-color:#470985;
+    padding: 10px;
+    color: #FFFFFF;font: bold;
+    border-radius: 8px;
+    text-decoration: none;   
+    
+}
+h2 {
+    text-align: center;
+    color:rgb(72, 24, 185);
+}
+.form {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    margin-top: 50px;
+    text-align: center;
+}
+.form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(72, 24, 185);
+    min-width: 100%;
+   
+}
+.form .input label {
+    color: rgb(72, 24, 185);
+}
+.form .input {
+    padding: 10px;
+}
+.form-add button{
+    background: rgb(228, 227, 230);
+    width: 380px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    color: rgb(72, 24, 185);
+    font-weight: bold;
+    margin-top: 50px;
+}
+.form-add button:hover {
+    background: rgb(72, 24, 185);
+    color: #FFFFFF;
+}
+.footer {
+    position:fixed;
+    bottom:0;
+    width:100%;
+    text-align: center;
+    background-color:#6620ac;
+    padding: 30px;
+    
+}
+.footer p {
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+}
+.footer .imagem img {
+    width: 30px;
+    margin:0 10px 10px 10px; 
+    cursor: pointer;
+    
+}
+.footer .imagem img:hover {
+    width: 35px;
+    
+}
