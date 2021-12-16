@@ -130,7 +130,10 @@ td img {
     margin-top: 20px;
     height: 100px;
 }
-
+.container-do-search input {
+    border: 0;
+    border-bottom: 3px solid;
+}
 #back-button {
     background-color: white;
     width: 100px;
