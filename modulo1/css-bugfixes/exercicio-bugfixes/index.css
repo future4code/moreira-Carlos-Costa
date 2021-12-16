@@ -70,6 +70,7 @@ div>p:first-child {
     color: white;
     padding-top: 50px;
     
+    
 }
 #container-de-descricao>p {
     display:block;
@@ -95,6 +96,7 @@ div>p:first-child {
 }
 #container-para-comprar>a {
     display: block;
+    margin-top: 80px;
 }
 
 
@@ -111,6 +113,8 @@ div:last-child {
 
 table {
     width: 60%;
+    margin: 0 auto;
+    margin-bottom: 80px;
 }
 td {
     text-align: center;
@@ -121,6 +125,7 @@ td button {
     height: 30px;
     border-radius: 5px;
     color: black;
+   
 }
 td button:hover {
     background-color: #bea222;
@@ -136,7 +141,11 @@ td img {
     border: 0;
     border-bottom: 3px solid;
 }
+a {
+    text-decoration: none;
+}
 #back-button {
+    display: block;
     background-color: white;
     width: 100px;
     height: 20px;
@@ -144,6 +153,9 @@ td img {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    margin: 0 auto;
+    text-decoration: none;
+    
 }
 
 #back-button:hover {
