@@ -13,9 +13,11 @@
 <body>
     <!--==================== HEADER ====================-->
     <header class=" container header" id="header">
-        <nav class="nav_container">
-           
-            <div class="nav_menu">
+        <nav class="nav_container grid">
+            <a href="#" class="name_logo">
+                Carlos Henrique
+            </a>
+            <div class="nav_menu" id="nav-menu">
                 <ul class="nav_list grid">
                     <li class="nav_item ">
                         <a href="/modulo1/projeto-portfolio/src/pages/home.html" class="nav_link">
@@ -43,112 +45,285 @@
                         </a>
                     </li>
                 </ul>
+                <i class="uil uil-times nav_close" onclick="openNavmenu()" id="nav-close"></i>
+            </div>
+
+            <div class="nav_btn">
+                <div class="nav_toggle" onclick="openNavmenu()" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
             </div>
         </nav>
     </header>
+    <div style="background-image:url('assets/background.svg')">
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="container home section" id="home">
+                <div class="home_container container grid">
+                    <div class="home_content grid">
+                        <div class="home_img">
+                            <svg class="home_svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0" mask-type="alpha">
+                                    <path d="M47.5,-10.5C57,13.6,56.8,45.8,40.8,57.8C24.8,69.9,-7.1,61.8,-25.1,46C-43.1,30.2,-47.3,6.7,-40.8,-13.4C-34.3,-33.5,-17.1,-50.3,1,-50.6C19,-50.9,38.1,-34.7,47.5,-10.5Z" 
+                                    transform="translate(100 100)" />
+                                </mask>
+                                <g mask="url(#mask0)">
+                                    <path d="M47.5,-10.5C57,13.6,56.8,45.8,40.8,57.8C24.8,69.9,-7.1,61.8,-25.1,46C-43.1,30.2,-47.3,6.7,-40.8,-13.4C-34.3,-33.5,-17.1,-50.3,1,-50.6C19,-50.9,38.1,-34.7,47.5,-10.5Z" 
+                                    transform="translate(100 100)" /> 
+                                    <image class="home_svg_img" x="25" y="5" xlink:href="./assets/perfil.png"></image>
+                                </g>
+                            
+                            </svg>
+                        </div>
+                        <div class="home_social">
+                          <a href="" class="home_social_icon">
+                              <i class="uil uil-linkedin-alt"></i>
+                          </a>
+                          <a href="" class="home_social_icon">
+                              <i class="uil uil-github-alt"></i>
+                          </a>
+                          <a href="" class="home_social_icon">
+                              <i class="uil uil-instagram"></i>
+                          </a>
+                          <a href="" class="home_social_icon">
+                              <i class="uil uil-twitter-alt"></i>
+                          </a>
+                        </div>
+                        <div class="home_description">
+                            <h1 class="home_title">Olá, meu nome é Carlos Henrique</h1>
+                            <h3 class="home_subtitle">FullStack Developer</h3>
+                            <p class="home_description_p">Olá, meu nome é Carlos Henrique da Costa e sou um desenvolvedor FullStack.
+                                Deste modo, FullStack é o programador capaz de dialogar com todas estas tecnologias, 
+                                sendo elas da área de front-end, ou o “rosto” de um site ou aplicação; back-end, sua estrutura interna;
+                                ou banco de dados, sistemas de coleta e armazenamento de informações.
+                            </p>
+                            <a href="#contact" class="button button_flex">
+                                Contato <i class="uil uil-message button_icon"></i>
+                            </a>
+                        </div>
 
-    <main class="main">
-        <!--==================== HOME ====================-->
-        <section class="container home section" id="home">
-            <div class="home_container container grid">
-                <div class="home_content grid">
-                    <div class="home_img">
-                        <svg class="home_svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <mask id="mask0" mask-type="alpha">
-                                <path d="M47.5,-10.5C57,13.6,56.8,45.8,40.8,57.8C24.8,69.9,-7.1,61.8,-25.1,46C-43.1,30.2,-47.3,6.7,-40.8,-13.4C-34.3,-33.5,-17.1,-50.3,1,-50.6C19,-50.9,38.1,-34.7,47.5,-10.5Z" 
-                                transform="translate(100 100)" />
-                            </mask>
-                            <g mask="url(#mask0)">
-                                <path d="M47.5,-10.5C57,13.6,56.8,45.8,40.8,57.8C24.8,69.9,-7.1,61.8,-25.1,46C-43.1,30.2,-47.3,6.7,-40.8,-13.4C-34.3,-33.5,-17.1,-50.3,1,-50.6C19,-50.9,38.1,-34.7,47.5,-10.5Z" 
-                                transform="translate(100 100)" /> 
-                                <image class="home_svg_img" x="25" y="5" xlink:href="./assets/perfil.png"></image>
-                            </g>
-                           
-                        </svg>
+                        <div class="home_scroll">
+                            <a href="" class="home_scroll_button button_flex">
+                                <i class="uil uil-mouse-alt home_scroll_mouse"></i>
+                                <span class="home_span_name">Scroll Down</span>
+                                <i class="uil uil-arrow-down home_scroll_arrow"></i>
+                            </a>
+                        </div>   
                     </div>
-                    <div class="home_social">
-                      <a href="" class="home_social_icon">
-                          <i class="uil uil-linkedin-alt"></i>
-                      </a>
-                      <a href="" class="home_social_icon">
-                          <i class="uil uil-github-alt"></i>
-                      </a>
-                      <a href="" class="home_social_icon">
-                          <i class="uil uil-instagram"></i>
-                      </a>
-                      <a href="" class="home_social_icon">
-                          <i class="uil uil-twitter-alt"></i>
-                      </a>
+                </div>
+            </section>
+
+            <!--==================== ABOUT ====================-->
+            <section class="about section" id="about">
+
+            
+            </section>
+
+            <!--==================== SKILLS ====================-->
+            <section class="skills section" id="skills">
+
+
+            </section>
+
+            <!--==================== QUALIFICATION ====================-->
+            <section class="qualification">
+                <h2 class="section_title home_content grid">Formação</h2>
+                <span class="section_subtitle home_content grid">Minha Jornada Acadêmica</span>
+
+                <div class="qualification home_content">
+                    <div class="qualification_tabs">
+                        <div class="qualification_button button_flex">
+                            <i class="uil uil-graduation-cap qualification_icon"></i> Graduação
+                        </div>
+                        <div class="qualification_button button_flex">
+                            <i class="uil uil-book-reader qualification_icon"></i> Trabalhos
+                        </div>
                     </div>
-                    <div class="home_description">
-                        <h1 class="home_title">Olá, meu nome é Carlos Henrique</h1>
-                        <h3 class="home_subtitle">FullStack Developer</h3>
-                        <p class="home_description_p">Olá, meu nome é Carlos Henrique da Costa e sou um desenvolvedor FullStack.
-                            Deste modo, FullStack é o programador capaz de dialogar com todas estas tecnologias, 
-                            sendo elas da área de front-end, ou o “rosto” de um site ou aplicação; back-end, sua estrutura interna;
-                            ou banco de dados, sistemas de coleta e armazenamento de informações.
-                        </p>
-                        <a href="#contact" class="button button_flex">
-                            Contato <i class="uil uil-message button_icon"></i>
-                        </a>
+                    <div class="qualification_sections">
+                        <div class="qualification_content qualification_active">
+                            <div class="qualification_data">
+                                <div class="data">
+                                    <h3 class="qualification_title">Analise e Desenvolvimento de Sistemas</h3>
+                                    <span class="qualification_subtitle">Unicesumar</span>
+                                    <div class="qualification_calendar">
+                                        <i class="uil uil-calendar-alt qualification_icon"></i>
+                                        2019-2021
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="qualification_rouder"></span>
+                                    <span class="qualification_line"></span>
+                                </div>
+                            </div>
+                            <div class="qualification_data">
+                                <div></div>
+                                <div>
+                                    <span class="qualification_rouder"></span>
+                                    <span class="qualification_line"></span>
+                                </div>
+                                <div class="data">
+                                    <h3 class="qualification_title">Desenvolvedor FullStack(FreeLancer)</h3>
+                                    <span class="qualification_subtitle">D&E Turismo</span>
+                                    <div class="qualification_calendar">
+                                        <i class="uil uil-calendar-alt qualification_icon"></i>
+                                        (Atual)
+                                    </div>
+                                </div>
+                                <div>
+                                </div>
+                            </div>
+                            <div class="qualification_data">
+                                <div class="data">
+                                    <h3 class="qualification_title">Desenvolvedor FullStack</h3>
+                                    <span class="qualification_subtitle">Labenu</span>
+                                    <div class="qualification_calendar">
+                                        <i class="uil uil-calendar-alt qualification_icon"></i>
+                                        nov-2021 à jun-2022
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="qualification_rouder"></span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="qualification_content" data-content>
+                            <div class="qualification_data">
+                                <div class="data">
+                                    <h3 class="qualification_title">Curso de Inglês</h3>
+                                    <span class="qualification_subtitle">Kingdom</span>
+                                    <div class="qualification_calendar">
+                                        <i class="uil uil-calendar-alt qualification_icon"></i>
+                                        2020-2023
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="qualification_rouder"></span>
+                                    <span class="qualification_line"></span>
+                                </div>
+                            </div>
+                            <div class="qualification_data">
+                                <div></div>
+                                <div>
+                                    <span class="qualification_rouder"></span>
+                                    <span class="qualification_line"></span>
+                                </div>
+                                <div class="data">
+                                    <h3 class="qualification_title">Desenvolvedor FullStack(FreeLancer)</h3>
+                                    <span class="qualification_subtitle">SindSempi</span>
+                                    <div class="qualification_calendar">
+                                        <i class="uil uil-calendar-alt qualification_icon"></i>
+                                        jan-2021 à mai-2021
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qualification_data">
+                                <div></div>
+                                <div>
+                                    <span class="qualification_rouder"></span>
+
+                                </div>
+                                <div class="data">
+                                    <h3 class="qualification_title">Desenvolvedor Front-End(Estágio)</h3>
+                                    <span class="qualification_subtitle">Dna Mobile</span>
+                                    <div class="qualification_calendar">
+                                        <i class="uil uil-calendar-alt qualification_icon"></i>
+                                        jan-2020 à dez-2020
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="home_scroll">
-                        <a href="" class="home_scroll_button button_flex">
-                            <i class="uil uil-mouse-alt home_scroll_mouse"></i>
-                            <span class="home_span_name">Scroll Down</span>
-                            <i class="uil uil-arrow-down home_scroll_arrow"></i>
-                        </a>
-                    </div>   
                 </div>
-            </div>
-        </section>
 
-        <!--==================== ABOUT ====================-->
-        <section class="about section" id="about">
+            </section>
 
-    
-        </section>
-
-        <!--==================== SKILLS ====================-->
-        <section class="skills section" id="skills">
+            <!--==================== SERVICES ====================-->
+            <section class="services section" id="services">
 
 
-        </section>
+            </section>
 
-        <!--==================== QUALIFICATION ====================-->
-        <section class="qualification section">
-
-
-        </section>
-
-        <!--==================== SERVICES ====================-->
-        <section class="services section" id="services">
-            
-
-        </section>
-
-        <!--==================== PORTFOLIO ====================-->
-        <section class="portfolio section" id="portfolio">
-            
-
-        </section>
-
-        <!--==================== PROJECT IN MIND ====================-->
-        <section class="project section">
+            <!--==================== PORTFOLIO ====================-->
+            <section class="portfolio section" id="portfolio">
 
 
-        </section>
+            </section>
 
-        <!--==================== CONTACT ME ====================-->
-        <section class="contact section" id="contact">
+            <!--==================== PROJECT IN MIND ====================-->
+            <section class="project section">
 
 
-        </section>
-    </main>
+            </section>
 
+            <!--==================== CONTACT ME ====================-->
+            <section class="contact section" id="contact">
+
+
+            </section>
+             <!--==================== SLIDER ====================-->
+             <div class="container_slider ">
+                 <h2 class="section_title home_content">Meus Projetos</h2>
+                <div class="container grid" id="slider">
+                    <input type="radio" name="slider" id="slide1" checked>
+                    <input type="radio" name="slider" id="slide2">
+                    <input type="radio" name="slider" id="slide3">
+                    <id id="slides">
+                        <div id="overflow">
+                            <div class="inner">
+                                <div class="slide slide_1">
+                                    <div class="slide-content">
+                                        <h5>Explore Reservas Brasil</h5>
+                                        <a href="pages/projetos/cripto_viewer/projeto_1.html">
+                                            <img src="assets/projeto_2.png" alt="imagem_1">
+                                        </a>
+                                        
+                                    </div>
+                                </div>
+                                <div class="slide slide_2">
+                                    <div class="slide-content">
+                                        <h5>D&E Turismo</h5>
+                                        <a href="pages/projetos/d_e_turismo/projeto_2.html">
+                                            <img src="assets/projeto_3.png" alt="imagem_3">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="slide slide_3">
+                                    <div class="slide-content">
+                                        <h5>Alura Quiz</h5>
+                                        <a href="pages/projetos/alura_quiz/projeto_3.html">
+                                            <img src="assets/projeto_4.png" alt="imagem_4">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </id>
+                    <div id="controls">
+                        <label for="slide1"></label>
+                        <label for="slide2"></label>
+                        <label for="slide3"></label>
+                    </div>
+                    <di id="bullets">
+                        <label for="slide1"></label>
+                        <label for="slide2"></label>
+                        <label for="slide3"></label>
+                    </di>
+                </div>
+            </div>  
+        </main>
+    </div>
     <!--==================== FOOTER ====================-->
     <footer class="footer">   
     </footer>
+
+    <script>
+        const openNavmenu = () => {
+           const element = document.getElementById("nav-menu");
+           element.classList.toggle("nav_menu");
+        }
+    </script>
 </body>
 </html>
