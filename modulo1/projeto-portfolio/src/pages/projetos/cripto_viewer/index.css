@@ -34,24 +34,33 @@ h4 {
 }
 
 .name_logo {
-    margin-top: 5px;
+    display: block;
+    margin:20px 20px;
     font-size: 25px;
-    color: #FFFFFF;
+    color:#FFFFFF;
     font-weight: 500;
-    width: 30%;
-
+    width:30%;
+   
 }
-
+.header {
+    display: inline;
+    width: 100%;
+    background: #FFFFFF
+}
 .nav_toggle,
 .nav_close {
     display: none;
 }
-
-.nav_container {
-    position: fixed;
+header.container_header {
+    background-color:var(--primary-color);
+    position:fixed;
     width: 100%;
-    background-color: var(--primary-color);
-    padding: 20px;
+    height:90px;
+}
+.nav_container {
+    margin-top: -45px;
+    width: 50%;
+    float: right;
 }
 
 .grid {

@@ -1,24 +1,5 @@
 /*==================== GOOGLE FONTS ====================*/
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200&display=swap');
-
-/*==================== VARIABLES CSS ====================*/
-:root {
-    --primary-color: #49a09d;
-    --primary-color-hover: #49a09d;
-    --primary-color-button: #2c0af0;
-}
-
-* {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-
-}
-
 body {
     font-size: 16px;
     background-repeat: no-repeat;
@@ -34,25 +15,35 @@ h4 {
 }
 
 .name_logo {
-    margin-top: 5px;
+    display: block;
+    margin:20px 20px;
     font-size: 25px;
-    color: #FFFFFF;
+    color:#FFFFFF;
     font-weight: 500;
-    width: 30%;
-
+    width:30%;
+   
 }
-
+.header {
+    display: inline;
+    width: 100%;
+    background: #FFFFFF
+}
 .nav_toggle,
 .nav_close {
     display: none;
 }
-
-.nav_container {
-    position: fixed;
+header.container_header {
+    background-color:var(--primary-color);
+    position:fixed;
     width: 100%;
-    background-color: var(--primary-color);
-    padding: 20px;
+    height:90px;
 }
+.nav_container {
+    margin-top: -45px;
+    width: 50%;
+    float: right;
+}
+
 
 .grid {
     display: grid;
