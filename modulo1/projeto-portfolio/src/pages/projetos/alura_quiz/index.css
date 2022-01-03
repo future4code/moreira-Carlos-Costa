@@ -88,7 +88,6 @@ header.container_header {
 .home_content {
     display: block;
     margin: 0 auto;
-    margin-top: 200px;
 }
 .container_imagem{
     width: 70%;
@@ -131,6 +130,22 @@ header.container_header {
     color: #fff;
     font-size: 12px;
     font-weight: 800;
+}
+.btn_back { 
+    margin: 120px 50px;
+    border: 0;
+    padding: 5px;
+    border-radius: 8px;
+    width: 100px;
+    cursor: pointer;
+}
+.btn_back i{
+   font-size: 20px;
+   font-weight: 800;
+}
+.btn_back:hover {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
 }
 .btn_git {
     float: right;
