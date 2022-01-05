@@ -14,20 +14,82 @@
     justify-content: space-between;
 }
 header {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
-    padding: 20px;
-    background-color: #065770;
+    height: 70px;
+    padding: 24px;
+    background-color: #14b2da;
+    border: 0;
+    border-bottom: 1px solid #ffffff;
     color: #FFFFFF;
 }
+header i {
+    font-size: 28px;
+}
+header .logo {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border: 2px solid #FFFFFF;
+    border-radius: 8px;
+    cursor: pointer;
+}
+header .logo i {
+    display: flex;
+    font-size: 24px;
+    margin: 0 5px;
+    padding: 2px;
+    border: 2px solid #FFFFFF;
+    border-radius: 8px
+    
+}
 header input {
-    padding: 6px;
+    padding: 10px;
     border: 0;
     border-radius: 4px;
     font-weight: 600;
+}
+.input_search {
+    position: relative;
+}
+.input_search i{
+    font-size: 20px;
+    color: #707070;
+    position: absolute;
+    right: 10px;
+    top: 6px;
+
+}
+.list_icons ul {
+    display: flex;
+    list-style: none;
+}
+.list_icons li {
+    padding: 0 10px;
+    cursor: pointer;
+}
+.nav {
+    background-color: #14b2da;
+    padding: 10px;
+    border: 0;
+    border-bottom: 1px solid #ffffff;
+}
+.nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+.nav li {
+    background-color: #FFFFFF;
+    margin: 0 20px;
+    padding: 10px;
+    color: #525050;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
 }
 main {
     background-color: #14b2da;
@@ -53,6 +115,8 @@ main {
 }
 .card_video p {
     margin-top: 20px;
+    color: #14b2da;
+    font-weight: 800;
 }
 footer {
     display: flex;

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="./index.css">
     <title>Document</title>
 </head>
@@ -11,9 +12,44 @@
     <div class="container">
 
         <header>
-            <h4>FutureTube</h4>
-            <input type="text" placeholder="Busca">
+            <div class="logo">
+                <i class="uil uil-video"></i>
+                <h4>FutureTube</h4>
+            </div>
+            <div class="input_search">
+                <input type="text" placeholder="Busca">
+                <i class="uil uil-search"></i>
+            </div>
+            <div class="list_icons">
+                <ul>
+                    <li>
+                        <i class="uil uil-setting"></i>
+                    </li>
+                    <li>
+                        <i class="uil uil-apps"></i>
+                    </li>
+                    <li>
+                        <i class="uil uil-bell"></i>
+                    </li>
+                    <li>
+                        <i class="uil uil-user-circle"></i>
+                    </li>
+                </ul>
+            </div>
+            
         </header>
+        <div class="nav">
+            <ul>
+                <li><i class="uil uil-angle-left-b"></i></li>
+                <li>Tudo</li>
+                <li>Ao vivo</li>
+                <li>Jogos</li>
+                <li>Musicas</li>
+                <li>Podcast</li>
+                <li>Inscrições</li>
+                <li><i class="uil uil-angle-right-b"></i></li>
+            </ul>
+        </div>
 
         <main>
             <div class="container_main">
@@ -32,10 +68,12 @@
                     </li>
                     <li>
                         <div class="card_video">
+                            <a href="./pages/video2/index.html">
                             <video width="320" height="180" controls>
                                 <source src="https://storage.googleapis.com/future-apis.appspot.com/2.mp4" type="video/mp4">
                 
                             </video>
+                            </a>
                             <p>Red Blood Cells Journey</p>
                         </div>
                     </li>
@@ -98,7 +136,7 @@
         </main>
 
         <footer>
-            <h4>Hello Footer</h4>
+            <h4>todos direitos reservados @FutureTube 2022</h4>
         </footer>
 
     </div>
