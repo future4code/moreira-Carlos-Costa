@@ -89,11 +89,35 @@ class Post extends React.Component {
   }
 
   onClickMarcarPost = () => {
+    if(!this.state.marcarPost) {
       this.setState({
-      marcarPost: true,
+        marcarPost: true,
+      
       })
+    }
+    else{
+      this.setState({
+      marcarPost: false,
+    
+    })
+    }
+    
   }
-  
+  onClickCompartilharPost = () => {
+    if(!this.state.compartilharPost) {
+      this.setState({
+        compartilharPost: true,
+      
+      })
+    }
+    else{
+      this.setState({
+      compartilharPost: false,
+    
+    })
+    }
+    
+  }
   render() {
     let iconeCurtida
     
@@ -105,10 +129,18 @@ class Post extends React.Component {
 
     let iconeMarcaPost
 
-    if(this.state.marcarPost) {
+    if(!this.state.marcarPost) {
       iconeMarcaPost = iconArrow
     } else {
       iconeMarcaPost = iconArrowRed
+    }
+
+    let iconeCompartilharPost
+
+    if(!this.state.compartilharPost) {
+      iconeCompartilharPost = iconPlus
+    } else {
+      iconeCompartilharPost = iconPlusRed
     }
 
     let componenteComentario
@@ -133,14 +165,14 @@ class Post extends React.Component {
         />
 
         <IconeComContador
-          icone={iconArrow}
+          icone={iconeMarcaPost}
           onClickIcone={this.onClickMarcarPost}
           
         />
 
         <IconeComContador
-          icone={iconPlus}
-          onClickIcone={'click'}
+          icone={iconeCompartilharPost}
+          onClickIcone={this.onClickCompartilharPost}
           
         />
 
