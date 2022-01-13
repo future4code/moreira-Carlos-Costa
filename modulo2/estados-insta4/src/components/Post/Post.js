@@ -57,6 +57,9 @@ class Post extends React.Component {
 
     marcarPost : false,
     compartilharPost: false,
+    comentarioPost: '',
+    comentarios: []
+
   }
 
   onClickCurtida = () => {
@@ -82,9 +85,12 @@ class Post extends React.Component {
   }
 
   aoEnviarComentario = () => {
+    const novoComentarioPost = this.state.comentarioPost;
+    const novoComentarioPostsArray = [novoComentarioPost, ...this.state.comentarios];
     this.setState({
-      comentando: false,
-      numeroComentarios: this.state.numeroComentarios + 1
+      comentando: true,
+      numeroComentarios: this.state.numeroComentarios + 1,
+      comentarios: novoComentarioPostsArray
     })
   }
 
@@ -118,7 +124,18 @@ class Post extends React.Component {
     }
     
   }
+  adicionaComentarioPost = () => {
+    
+   
+  };
+  onChangeInputPessoa = (event) => {
+
+    this.setState({ valorInputPessoa: event.target.value });
+
+  };
   render() {
+
+    console.log(this.comentarios)
     let iconeCurtida
     
     if(this.state.curtido) {
@@ -146,7 +163,8 @@ class Post extends React.Component {
     let componenteComentario
 
     if(this.state.comentando) {
-      componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
+      componenteComentario= <SecaoComentario aoEnviar={this.aoEnviarComentario} />
+
     }
 
     return <PostContainer>
