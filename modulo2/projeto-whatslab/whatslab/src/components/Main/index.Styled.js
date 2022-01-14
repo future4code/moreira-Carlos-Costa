@@ -10,6 +10,7 @@ export const ContainerMain = styled.div `
     width: 70%;
     height: 94vh;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    word-wrap: break-word;
     
 `
 export const ContainerHeader = styled.div `
@@ -48,5 +49,15 @@ export const ContainerHeaderIPut = styled.div `
     position: absolute;
     bottom: 0;
     left: 33.3%;
+    
+`
+export const Span = styled.div `
+    padding: 20px;
+    background-color: #4F9888;
+    color: #FFFFFF;
+    width:30%;
+    border-radius: 20px 20px 0 20px;
+    margin-bottom: 40px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     
 `
