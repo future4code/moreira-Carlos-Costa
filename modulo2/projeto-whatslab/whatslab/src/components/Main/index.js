@@ -8,7 +8,8 @@ import {ContainerMain,
      ContainerHeaderImg, 
      ContainerHeaderIcon, 
      ContainerHeaderIPut,
-     ContainermainMensagem
+     ContainermainMensagem,
+     Span
     } from './index.Styled'
 import SideBar from '../../components/SideBar'
 
@@ -49,9 +50,9 @@ class Main extends React.Component {
     render() {
         const listaDeMensagem = this.state.mensagens.map((msg) => {
             return (
-              <span>
-                <strong>{msg.usuario}</strong> : {msg.mensagem}
-              </span>
+              <Span>
+                <strong>{msg.usuario}</strong> {msg.mensagem}
+              </Span>
             );
           });
     return (
