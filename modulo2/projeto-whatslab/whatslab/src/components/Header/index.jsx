@@ -4,9 +4,7 @@ import {ContainerHeader} from './index.Styled.js'
 const Header = () => {
 
     return (
-        <ContainerHeader >
-
-        </ContainerHeader>
+        <ContainerHeader />
     );
 }
 

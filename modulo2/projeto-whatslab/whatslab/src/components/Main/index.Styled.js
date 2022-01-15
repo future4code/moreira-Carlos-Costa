@@ -41,16 +41,6 @@ export const ContainermainMensagem = styled.p `
     left: 33.3%;
     
 `
-export const ContainerHeaderIPut = styled.div `
-    display: flex;
-    background-color: #DFDFDF;
-    padding: 20px;
-    width: 66.7%;
-    position: absolute;
-    bottom: 0;
-    left: 33.3%;
-    
-`
 export const Span = styled.div `
     padding: 20px;
     background-color: #4F9888;
