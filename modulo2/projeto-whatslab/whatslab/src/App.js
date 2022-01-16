@@ -3,18 +3,18 @@ import './App.Styled.js'
 import {GlobalStyled, Container} from './App.Styled'
 
 import Header from './components/Header'
-import ContainerMain from './components/Main'
+import SideBar from './components/SideBar'
+import Main from './components/Main'
 
 
 function App() {
   return (
     <>
+    <GlobalStyled />
+    <Header />
     <Container>
-
-      <GlobalStyled />
-      <Header />
-      <ContainerMain />
-
+      <SideBar />
+      <Main />
     </Container>
     </>
   );
