@@ -4,6 +4,11 @@ export const ContainerSideBar = styled.div `
     background-color:#CFCFCF;
     padding: 100px 30px;
     height: 100%;
+
+    @media(max-width: 800px) {
+        display: none;
+    }
+    
     
 `
 export const ContainerSideBarUl = styled.ul `
