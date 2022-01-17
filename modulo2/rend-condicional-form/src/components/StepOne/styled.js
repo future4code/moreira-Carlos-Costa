@@ -8,6 +8,8 @@ export const Container = styled.div`
     width:70%;
     flex-direction: column;
     align-items: center;
+    border-radius: 8px;
+    padding-top: 40px;
 `
 export const Form = styled.div`
     display: flex;
@@ -20,10 +22,15 @@ export const Form = styled.div`
         list-style: none;
         text-align: center;
         padding: 10px;
+        width: 80%;
     }
 
     li {
         padding: 10px;
     }
+    
+`
+export const Button = styled.button`
+   background-color:grey;
 
 `
