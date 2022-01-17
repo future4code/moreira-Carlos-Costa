@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Container, Form } from './styled'
+import { Container, Form, Button } from './styled'
 
 class StepOne extends Component {
     render() {
@@ -23,7 +23,7 @@ class StepOne extends Component {
                         </li>
                         <li>
                             <div>
-                                <p>3. Qual seu Email?</p>
+                                <p>3. Qual seu email?</p>
                                 <input type="text" />
                             </div>
                         </li>
@@ -40,7 +40,7 @@ class StepOne extends Component {
                         </li>
                         <li>
                             <div>
-                                <button type="button">Proxima etapa</button>
+                                <Button onClick={this.props.buttonStepPage}type="button">Proxima etapa</Button>
                             </div>
                         </li>
                     </ul>
