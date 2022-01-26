@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { AiOutlineDelete } from 'react-icons/ai'
+
 import { Link } from 'react-router-dom';
 
 import axios from 'axios';
@@ -14,6 +16,8 @@ const headers = {
     }
 };
 
+
+
 class ListeUsers extends Component {
 
     state = {
@@ -21,36 +25,50 @@ class ListeUsers extends Component {
       };
 
     componentDidMount() {
+      
         this.getAllUsersLists();
     }
-    getAllUsersLists = () => {
-        axios
-          .get(url, headers)
-          .then((res) => {
-            this.setState({ usersLists: res.data});
-          })
-          .catch((err) => {
-            alert("Algo deu errado, tente novamente");
-          });
+    getAllUsersLists = async () => {
+        try {
+            const response = await axios.get(url, headers)
+            this.setState({ usersLists: response.data});
+        
+        } 
+        catch (error) {
+            alert(error.response);
+        }
+        
     };
 
-    deleteUser = (id) => {
-          axios.delete(`${url}/${id}`, headers)
-            .then((res) => {
-                alert("ok");
+    deleteUser = async (id) => {
+       
+        if(window.confirm("Tem certeza de que deseja deletar esse usuario?") === true){
+
+            try {
+                await axios.delete(`${url}/${id}`, headers)
+                alert(`Usuario foi deletado com sucesso!`);
                 this.getAllUsersLists();
-                this.setState({usersLists: this.state.usersLists})
-            })
-            .catch((err) => {
-                alert("Algo deu errado, tente novamente");
-            })
+        
+            }
+            catch (error) {
+                alert("Error ao deletar usuario");
+            }
+        }
+                
     }
     
     render() {
-        const usersListComponents = this.state.usersLists.map(play => {
-            return <li key={play.id}>
-                {play.name}
-                <button onClick={() => {this.deleteUser(play.id)}}>X</button>
+        
+        const usersListComponents = this.state.usersLists.map(response => {
+            return <li key={response.id}>
+                <Link style={{textDecoration: 'none', color: 'white'}} to={`/userdatails/${response.id}`}>
+                <span >
+                    {response.name}
+                </span>
+                </Link>
+                
+                
+                <button onClick={() => {this.deleteUser(response.id)}}><AiOutlineDelete/></button>
                 </li>;
         });
       

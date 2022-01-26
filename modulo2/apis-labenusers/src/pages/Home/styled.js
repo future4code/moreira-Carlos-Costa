@@ -9,7 +9,10 @@ export const Container = styled.div`
         flex-direction: column;
         justify-content: center;
 
-        background-color:#F2F1EF;
+    
+        background: linear-gradient(to bottom, #6C7A89, #076585); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
         width:70%;
         height: 80vh;
         margin: 0 auto;
@@ -21,7 +24,7 @@ export const Container = styled.div`
     }
     h1 {
 
-        color:#6C7A89;
+        color:#FFFFFF;
     }
 
     input {
