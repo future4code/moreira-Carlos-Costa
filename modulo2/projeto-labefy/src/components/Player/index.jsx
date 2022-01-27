@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+
+import { Container } from './styled'
 
 class Player extends Component {
     render() {
         return (
-            <div>
-                <h1>Hello Player</h1>
-            </div>
+            <Container>
+               <div className="container_player">
+                    player
+               </div>
+            </Container>
         );
     }
 }

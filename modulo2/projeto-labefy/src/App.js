@@ -5,13 +5,24 @@ import PlayList from './components/PlayList'
 import Player from './components/Player'
 import DetailPlayList from './components/DetailPlayList'
 
+import { GlobalStyled, Container, ContainerGrid } from './GlobalStyled'
+
 function App() {
   return (
     <div className="App">
-      <Header />
-      <PlayList />
-      <Player />
-      <DetailPlayList />
+      
+      <GlobalStyled/>
+      <Container>
+          <Header />
+          <PlayList />
+          <ContainerGrid>
+            <Player />
+            <DetailPlayList />
+          </ContainerGrid>
+          
+      </Container>
+      
+     
     </div>
   );
 }

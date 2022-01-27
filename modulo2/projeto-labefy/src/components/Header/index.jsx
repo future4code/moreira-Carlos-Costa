@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+
+import { Container } from './styled'
 
 class Header extends Component {
     render() {
         return (
-            <div>
+            <Container>
                 <h1>Hello Header</h1>
-            </div>
+            </Container>
         );
     }
 }
