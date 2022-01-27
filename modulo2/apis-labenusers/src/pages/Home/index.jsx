@@ -48,15 +48,12 @@ class Home extends Component {
     render() {
         return (
             <Container>
-               
                 <div className="container_form">
                     <div className="button_link">
                         <Link to="/listusers">
                             <button type="button">Trocar de tela</button>
                         </Link>
-                    </div>
-                
-                    
+                    </div>         
                     <div>
                         <h1>LabUsers</h1>
                         <input 
