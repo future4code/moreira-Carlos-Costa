@@ -64,4 +64,14 @@ export const Container = styled.div`
     span {
         cursor: pointer;
     }
+    .form_input {
+        display: flex;
+        align-items: center;
+    }
+    .form_input input {
+        padding: 10px;
+        margin: 5px;
+        border-radius: 4px;
+        border: 0;
+    }
 `

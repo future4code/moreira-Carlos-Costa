@@ -3,7 +3,7 @@ import {useParams, Link } from 'react-router-dom';
 
 import { Container } from './styled';
 
-import { AiOutlineDelete } from 'react-icons/ai'
+import { AiOutlineDelete, AiOutlineEdit, AiOutlineSave } from 'react-icons/ai'
 
 import axios from 'axios';
 
@@ -23,6 +23,7 @@ const headers = {
 class UserDetail extends Component {
     state = {
         user: [],
+        showInputs: false
     };
     componentDidMount() {
         this.getUserById();
@@ -58,6 +59,12 @@ class UserDetail extends Component {
         }
                 
     }
+
+    onClick = () => {
+        this.setState({ showInputs: true });
+    }
+
+
     render() {
       
         return (
@@ -74,8 +81,18 @@ class UserDetail extends Component {
                             <p><strong>Nome: </strong>{this.state.user.name} {' '}</p>
                             <p><strong>Email: </strong>{this.state.user.email}</p>
                         </span>
-
-                        <button onClick={() => { this.deleteUser(this.state.user.id) }}><AiOutlineDelete/></button>
+                        <div style={this.state.showInputs === true ? {display: 'flex'} : { display: 'none' }}>
+                            <span className="form_input">
+                                <input type="text" />
+                                <input type="text" />
+                                <button><AiOutlineSave/></button>
+                            </span>
+                        </div>
+                        <span>
+                            <button onClick={() => {this.onClick()}} style={{cursor: "pointer", marginRight: 18}}><AiOutlineEdit/></button>
+                            <button onClick={() => { this.deleteUser(this.state.user.id) }}><AiOutlineDelete/></button>
+                        </span>
+                        
                     </li>;
                 </div>
 
