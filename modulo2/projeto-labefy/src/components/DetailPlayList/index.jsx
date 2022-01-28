@@ -2,32 +2,26 @@ import React, { Component } from 'react'
 
 import { Container } from './styled'
 
-class Player extends Component {
+class DetailPlayList extends Component {
     render() {
+        console.log('details', this.props.playListById.map(res => res.url))
         return (
             <Container>
                <div className="container_music">
+                   {this.props.playListById.map(res => (
                     <ul>
                         <li>
-                            <div>{' oi'}</div>
+                            <div>
+                                <span>{res.name}</span>
+                            </div>
                         </li>
-                        <li>
-                            <div>{' oi'}</div>
-                        </li>
-                        <li>
-                            <div>{' oi'}</div>
-                        </li>
-                        <li>
-                            <div>{' oi'}</div>
-                        </li>
-                        <li>
-                            <div>{' oi'}</div>
-                        </li>
+                        
                     </ul>
+                   ))}
                </div>
             </Container>
         );
     }
 }
 
-export default Player;
+export default DetailPlayList;

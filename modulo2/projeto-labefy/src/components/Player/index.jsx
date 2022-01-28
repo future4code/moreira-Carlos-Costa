@@ -7,7 +7,7 @@ class Player extends Component {
         return (
             <Container>
                <div className="container_player">
-                    player
+                    <audio controls src="http://spoti4.future4.com.br/1.mp3"></audio>
                </div>
             </Container>
         );

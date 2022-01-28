@@ -1,35 +1,30 @@
 import React, { Component } from 'react';
 
+import { Link } from 'react-router-dom'
+
 import { Container } from './styled'
+
+
 class PlayList extends Component {
+
     render() {
         return (
             <Container>
-                <button>Add PlayList</button>
-                <ul>
+                <Link className="btn_addPlayList" to="/addplaylist">
+                    <button>Add PlayList</button>
+                </Link>
+                <div className="playlist">
+                    {this.props.playLists.map(response => (
+                        <ul>
+                            <li>
+                                <div onClick={() => { this.props.getPlayListById(response.id) }}>
+                                    {response.name}
+                                </div>
+                            </li>
+                        </ul>
 
-                    <li>
-                        <div>
-                            Sertanejo
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            Forro
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            Pop
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            Mpb
-                        </div>
-                    </li>
-                    
-                </ul>
+                    ))}
+                </div>
             </Container>
         );
     }

@@ -10,11 +10,11 @@ export const GlobalStyled = createGlobalStyle `
 `
 export const Container = styled.div`
     background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+    height: 100vh;
 `
 export const ContainerGrid = styled.div`
 
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 50vh;
 
 `
