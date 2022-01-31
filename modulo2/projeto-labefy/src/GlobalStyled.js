@@ -6,10 +6,11 @@ export const GlobalStyled = createGlobalStyle `
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
   }
 `
 export const Container = styled.div`
-    background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+    background-color:#11162a;
     height: 100vh;
 `
 export const ContainerGrid = styled.div`

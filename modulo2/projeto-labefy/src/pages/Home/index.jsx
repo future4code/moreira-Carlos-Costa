@@ -3,12 +3,11 @@ import React, { Component} from 'react';
 
 import Header from '../../components/Header'
 import PlayList from '../../components/PlayList'
-import Player from '../../components/Player'
 import DetailPlayList from '../../components/DetailPlayList'
 
 import axios from 'axios'
 
-import { GlobalStyled, Container, ContainerGrid } from '../../GlobalStyled'
+import {Container, ContainerGrid } from './styled'
 
 
 
@@ -53,22 +52,32 @@ class App extends Component {
         }
 
     }
+    deletePlayList = async (id) => {
+        if(window.confirm('Voce deseja deletar essa PlayList?') === true){
+            try {
+            await axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}`, headers)
+            this.getAllPlayLists();
+        }
+        catch (error) {
+            alert("Erro");
+        }
+        }
+        
+
+    }
 
   render() {
      
     return (
     <>
-      <GlobalStyled/>
       <Container>
         <Header />
         <PlayList 
         playLists={this.state.playLists}
         getPlayListById={this.getPlayListById}
+        deletePlayList={this.deletePlayList}
         />
         <ContainerGrid>
-          <Player 
-          getPlayListById={this.getPlayListById}
-          />
           <DetailPlayList 
           playListById={this.state.playListById}
           />
