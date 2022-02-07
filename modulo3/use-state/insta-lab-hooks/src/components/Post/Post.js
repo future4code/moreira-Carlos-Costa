@@ -19,23 +19,19 @@ const Post = (props) => {
   const onClickCurtida = () => {
     if(curtido) {
       
-      setCurtido(true)
+      setCurtido(!curtido)
       setNumeroCurtidas(numeroCurtidas-1) 
     
     }
     else {
 
-      setCurtido(true)
+      setCurtido(!curtido)
       setNumeroCurtidas(numeroCurtidas+1) 
     }
   };
 
   const onClickComentario = () => {
-    setComentando({
-
-      comentando: true
-
-    })
+    setComentando(true)
   }
 
   const enviarComentario = (comentario) => {
