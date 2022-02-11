@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import { Container } from './styled'
 
-import Logo from '../../assets/logo.svg'
+import Logo from '../../assets/logo.png'
 
 import Fade from 'react-reveal/Fade';
 
