@@ -1,7 +1,6 @@
 import React,{useState, useEffect} from 'react';
 
 import { Link } from "react-router-dom";
-import axios from 'axios';
 
 import { Container } from './styled';
 
@@ -9,6 +8,8 @@ import { MdOutlineArrowBackIosNew, MdMoreVert } from 'react-icons/md'
 
 import Fade from 'react-reveal/Fade';
 import Bounce from 'react-reveal/Bounce';
+
+import api from "../../components/services/api"
 
 const MatchUsers = () => {
 
@@ -19,29 +20,23 @@ const MatchUsers = () => {
   }, [matches]);
 
   const getMatches = () => {
-    axios
-      .get(
-        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:Carlos-Henrique/matches"
-      )
-      .then((res) => {
+    api.get("matches")
+    .then((res) => {
         setMatches(res.data.matches);
       })
-      .catch((err) => {
+    .catch((err) => {
         console.log(err);
-      });
+    });
   };
 
   const deleteMatches = () => {
-    axios
-      .put(
-        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:Carlos-Henrique/clear"
-      )
-      .then((res) => {
+    api.put("clear")
+    .then((res) => {
         setMatches([]);
-      })
-      .catch((err) => {
+    })
+    .catch((err) => {
         console.log(err);
-      });
+    });
   };
   return (
     <Container>

@@ -13,10 +13,28 @@ export const Container = styled.div`
     border-radius: 20px;
     padding: 30px 0;
 
-    .icons {
+    .icon_like {
+        background: #EC5873;
+        border-radius: 50%;
+        color: #FFFFFF;
         font-size: 3rem;
+        transition: transform .2s;
+        padding:0.4rem;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
         &:hover {
-            color: #EC5873;
+            transform: scale(1.2)
+        }
+    }
+    .icon_deslike {
+        background:  #3D3D3D;
+        border-radius: 50%;
+        color: #FFFFFF;
+        font-size: 3rem;
+        transition: transform .2s;
+        padding:0.4rem;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        &:hover {
+            transform: scale(1.2)
         }
     }
     .card_img img{
@@ -24,6 +42,13 @@ export const Container = styled.div`
         object-fit: cover;
         object-position: 60% top;
         
+    }
+    .animation {
+        position: absolute;
+        top: 100px;
+        left: auto;
+        right: auto;
+        transform: scale(1.2)
     }
     .icons_users {
         font-size: 40px; 

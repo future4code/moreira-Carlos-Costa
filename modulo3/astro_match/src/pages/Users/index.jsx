@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
 import { Link } from "react-router-dom";
 
 import { Layout, Card } from 'antd';
+import PuffLoader from "react-spinners/PuffLoader";
+import AnimationData from '../../components/Animacao/anima'; 
 
 import Zoom from 'react-reveal/Zoom';
 
@@ -13,9 +14,14 @@ import { AiFillLike, AiFillDislike, AiOutlineUsergroupAdd } from 'react-icons/ai
 import { MdOutlineArrowBackIosNew } from 'react-icons/md'
 import { FaHeart, FaHeartBroken } from 'react-icons/fa'
 
+import api from "../../components/services/api"
+
 const Users = () => {
+
     const [profile, setprofile] = useState([]);
     const [choose, setChoose] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [animation, setAnimation] = useState(false);
   
 
     const { Content } = Layout;
@@ -24,11 +30,9 @@ const Users = () => {
         getData()
     }, []);
     const getData = () => {
-        axios
-        .get(
-        `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:Carlos-Henrique/person`
-        )
+        api.get(`person`)
         .then((res) => {
+        setLoading(false)
         setprofile(res.data.profile);
         })
         .catch((err) => {
@@ -37,13 +41,10 @@ const Users = () => {
     };
     const matchOk = () => {
         const body = { id: profile.id, choice: true };
-        axios
-        .post(
-            "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:Carlos-Henrique/choose-person",
+        api.post(`choose-person`,
             body
         )
         .then((res) => {
-            alert("Você deu um match");
             setChoose(res.data);
             getData();
         })
@@ -58,12 +59,20 @@ const Users = () => {
         return Math.floor(Math.random() * (max - min)) + min;
     }
     const numberMatch = getRandom();
+    
+    const handleClick = () => {
 
+        setAnimation(!animation)
+        setTimeout(() => {
+            setAnimation(animation);
+            matchOk()
+        }, 2000);
+      };
     return (
         <>
             <Layout>
-                <Content style={{position: 'relative'}}>
-                    <Container>
+                <Content>
+                    <Container style={{position: 'relative'}}>
                         <div className="header">
                             <Link to="/">
                                 <MdOutlineArrowBackIosNew className="icons_users"/>
@@ -73,7 +82,14 @@ const Users = () => {
                                 <AiOutlineUsergroupAdd className="icons_users"/>
                             </Link>
                         </div>
-                        <Zoom>
+                        <Zoom >
+                        {
+                        loading ? (
+                            <div style={{position: 'absolute', top: 300, left:"40%", right: "50%",backgroud: "#FFFFFF"}}>
+                                < PuffLoader />
+                            </div>
+                            
+                        ): (
                             <Card
                                 className="card_img"
                                 cover={
@@ -83,10 +99,17 @@ const Users = () => {
                                     />
                                 }
                                 actions={[
-                                    <TiDeleteOutline onClick={() => getData()} className="icons" key="setting" />,
-                                    <TiHeartOutline onClick={() => matchOk()} className="icons" key="ellipsis" />,
+                                    <TiDeleteOutline onClick={() => getData()} className="icon_deslike" key="setting" />,
+                                    <TiHeartOutline onClick={ handleClick } className="icon_like" key="ellipsis" >
+                                        {animation ? "Hide" : "Show"}
+                                    </TiHeartOutline>
                                 ]}
-                            >
+                            >   
+                                <Zoom >
+                                    <div className="animation">
+                                        {animation && <AnimationData/>}
+                                    </div>
+                                </Zoom>
                                 
                                 <Details>
                                     <div className="description">
@@ -96,7 +119,7 @@ const Users = () => {
                                     <p className="bio">{profile.bio}</p>
                                 </Details>
                                 <Match>
-                                    {numberMatch > 50 ? (
+                                    {numberMatch >= 50 ? (
                                         <div>
                                             < AiFillLike style={{fontSize: 50, color: "#FFFFFF"}}/>
                                             <p>Você e {profile.name} tem {numberMatch}% de Matching</p>
@@ -113,6 +136,7 @@ const Users = () => {
                                     )}
                                 </Match>
                             </Card>
+                        )}    
                         </Zoom>
                     </Container>
                 </Content>

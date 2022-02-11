@@ -22,8 +22,8 @@ const Home = () => {
                         </Fade>
                         <Fade bottom>
                             <div>
-                            <h1>Encontre o seu parceiro aqui</h1>
-                            <p>Junte-se a nós e faça um bom amigo</p>
+                            <h1>Encontre Seu Par Perfeito</h1>
+                            <p>Junte-se a nós e conheça a pessoa ideal</p>
                             <Link className="button" to="/users">
                                 <button>Junte-se a nós</button>
                             </Link>
