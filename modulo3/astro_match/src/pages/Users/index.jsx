@@ -66,11 +66,11 @@ const Users = () => {
                     <Container>
                         <div className="header">
                             <Link to="/">
-                                <MdOutlineArrowBackIosNew style={{fontSize: "30px", cursor: "pointer", color: "#FFFFFF"}}/>
+                                <MdOutlineArrowBackIosNew className="icons_users"/>
                             </Link>
                             <p>AstroMatch</p>
                             <Link to="/matches">
-                                <AiOutlineUsergroupAdd style={{fontSize: "40px", cursor: "pointer", color: "#FFFFFF"}}/>
+                                <AiOutlineUsergroupAdd className="icons_users"/>
                             </Link>
                         </div>
                         <Zoom>
