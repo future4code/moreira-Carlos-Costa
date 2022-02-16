@@ -18,7 +18,7 @@ const Header = () => {
 
 
     const showButton = () => {
-      if (window.innerWidth <= 860) {
+      if (window.innerWidth <= 960) {
         setButton(false);
       } else {
         setButton(true);
@@ -33,12 +33,13 @@ const Header = () => {
 
     return (
         <Container>
-            <ul>
-                <li><img src={Logo} alt="logo"/></li>
-                <div className="menu_icon" onClick={handleClick}>
+            <div className="menu_icon" onClick={handleClick}>
                     {click ? <FiX /> : <FiMenu />}
-                </div>
-                <div className="links">
+            </div>
+            <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+                <li><img src={Logo} className="logo" alt="logo"/></li>
+                
+                <div id="list" className="links">
                     <NavLink exact to="/" activeClassName="active" onClick={closeMobileMenu}>
                         <li>Home</li>
                     </NavLink>
