@@ -8,18 +8,33 @@ export const Container = styled.div`
 `
 export const Background = styled.div`
     background-color: #0B0D17;
-    height: 100vh;
+    min-height: 100vh;
     color: #FFFFFF;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     position: relative;
     overflow: hidden;
 
     img {
-        height: 100vh;
-        width: 100%;
+        min-height: 100vh;
+        min-width: 100%;
         object-fit: cover;
     }
+
+        @media screen and (max-width: 960px){
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            align-content: center;
+            width: 100%;
+
+        img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transform: rotate(90deg);
+        }
+    }
+       
 
 `
 export const Main = styled.div`
@@ -39,38 +54,48 @@ export const Main = styled.div`
         height: 80vh;
         
     }
+    @media screen and (max-width: 960px){
+        .container_main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        
+    }
+            
+        }
 
 `
 export const MainLeft = styled.div`
     display: flex;
     flex-direction:column;
-    justify-content: center;
+    justify-content: end;
     align-items:center;
     width: 50%;
-    height: 40vh;
+    height: 50vh;
 
     div {
         display: flex;
         flex-direction:column;
-        width: 60%;
-        height: 40vh;
-        justify-content: center;
+        width: 70%;
+        height: 100%;
+        justify-content: space-between;
         
     }
-    div h4 {
+    div h1 {
         font-family: Barlow Condensed;
         font-style: normal;
         font-weight: normal;
         font-size: 1rem;
         line-height: 8px;
-        /* identical to box height */
-
+        
         letter-spacing: 4.725px;
 
         color: #D0D6F9;
 
     }
-    div h1 {
+    div h4 {
         font-family: Bellefair;
         font-style: normal;
         font-weight: normal;
