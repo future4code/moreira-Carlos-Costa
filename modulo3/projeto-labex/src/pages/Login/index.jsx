@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import Header from "../../components/Header"
 
-import 'antd/dist/antd.css';
-
 import { useNavigate } from "react-router-dom"
 
 import api from "../../services/api"
@@ -14,6 +12,7 @@ import { Container, Background, ContainerLogin, ContainerInput } from './styled'
 import BackgroundImg from "../../assets/background1.svg"
 
 const Login = () => {
+    
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -80,7 +79,7 @@ const Login = () => {
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}
                             />
-                            <button type="submit">Login</button>
+                            <button onclick={handleLogin}>Login</button>
                         </form>
                     </ContainerInput>
                 </ContainerLogin>

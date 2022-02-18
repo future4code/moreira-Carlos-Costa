@@ -34,7 +34,6 @@ export const Background = styled.div`
         transform: rotate(90deg);
         }
     }
-       
 
 `
 export const Main = styled.div`

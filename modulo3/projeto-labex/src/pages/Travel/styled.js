@@ -53,6 +53,21 @@ export const MainLeft = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+
+    img {
+        animation: rotate 200s linear infinite;
+    }
+    
+    @keyframes rotate {
+				from {
+					transform: rotate(0deg);
+				}
+
+				to {
+					transform: rotate(359deg);
+				}
+			}
+
    
 `
 export const MainRight = styled.div`
@@ -62,8 +77,7 @@ export const MainRight = styled.div`
     align-content: center;
     width: 80%;
     margin:  0 auto;
-
-
+    
     span {
         font-family: "Bellefair";
         font-style: normal;

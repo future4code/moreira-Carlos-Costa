@@ -31,6 +31,8 @@ const Header = () => {
 
     window.addEventListener('resize', showButton);
 
+    const logon = localStorage.getItem('token')
+    console.log(logon);
     return (
         <Container>
             <div className="menu_icon" onClick={handleClick}>
@@ -49,6 +51,7 @@ const Header = () => {
                     <NavLink to="/login" activeClassName="active" onClick={closeMobileMenu}>
                         <li>Login</li>
                     </NavLink>
+                    
                 </div>
                 
             </ul>
