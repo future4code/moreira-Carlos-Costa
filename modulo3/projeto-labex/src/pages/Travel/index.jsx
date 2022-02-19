@@ -14,6 +14,7 @@ import "swiper/css/navigation"
 import { Navigation } from "swiper"
 
 import BackgroundImg from "../../assets/Bitmap1.png"
+import LoadingImage from "../../assets/loading.gif"
 
 import apiPlanets from "../../components/Planets.js"
 
@@ -39,8 +40,10 @@ const Travel = () => {
 
                 </ContainerMain>
                 <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-                    {isLoading && <p style={{color: 'snow'}}>Carregando...</p>}
-                    {!isLoading && error && <p>error</p>}
+                    <div className="loading">
+                         {isLoading && <img  src={LoadingImage}/>}
+                    </div>
+                    {!isLoading && error && <h1>Algo deu errado!<span>: (</span></h1>}
                     {!isLoading && travels && travels.length > 0 && travels?.map(res => (
                         <SwiperSlide>
                             <Main>
@@ -80,7 +83,7 @@ const Travel = () => {
                         </SwiperSlide>
                     ))}
                     {!isLoading && travels && travels.length === 0 && (
-                        <p>Não há nemhuma Viagem</p>
+                        <h1>Não há nemhuma Viagem Cadastrada</h1>
                     )}
                 </Swiper>
             </Background>

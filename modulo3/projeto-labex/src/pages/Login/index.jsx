@@ -79,7 +79,7 @@ const Login = () => {
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}
                             />
-                            <button onclick={handleLogin}>Login</button>
+                            <button type="submit">Login</button>
                         </form>
                     </ContainerInput>
                 </ContainerLogin>

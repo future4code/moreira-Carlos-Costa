@@ -42,13 +42,13 @@ const Header = () => {
                 <li><img src={Logo} className="logo" alt="logo"/></li>
                 
                 <div id="list" className="links">
-                    <NavLink exact to="/" activeClassName="active" onClick={closeMobileMenu}>
+                    <NavLink exact to="/" activeclassname="active" onClick={closeMobileMenu}>
                         <li>Home</li>
                     </NavLink>
-                    <NavLink to="/travel" activeClassName="active" onClick={closeMobileMenu}>
+                    <NavLink to="/travel" activeclassname="active" onClick={closeMobileMenu}>
                         <li>Destinos</li>
                     </NavLink>
-                    <NavLink to="/login" activeClassName="active" onClick={closeMobileMenu}>
+                    <NavLink to="/login" activeclassname="active" onClick={closeMobileMenu}>
                         <li>Login</li>
                     </NavLink>
                     

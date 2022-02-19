@@ -5,6 +5,32 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     
+
+    h1 {
+        margin-top:200px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color:#FFFFFF;
+    }
+    .loading {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+    .loading img {
+        width: 20%;
+    } 
+    h1 span {
+        width: auto;
+        margin-left: 30px;
+        transform: rotate(90deg);
+        font-size:2rem;
+    }
 `
 export const Background = styled.div`
     height: 100vh;
@@ -41,6 +67,7 @@ export const ContainerMain = styled.div`
         cursor: pointer;
         
     }
+    
 `
 export const Main = styled.div`
     display: grid;

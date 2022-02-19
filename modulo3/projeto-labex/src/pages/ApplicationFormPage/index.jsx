@@ -12,7 +12,7 @@ import { Container, Background,ContainerMain,ContainerPlanet, ContainerLogin, Co
 
 import BackgroundImg from "../../assets/background1.svg"
 
-import { Countries } from '../../components/Countries'
+import { Countries } from '../../components/Selects'
 
 import { useFormApplication } from "../../hooks/useFormApplication"
 
@@ -22,32 +22,30 @@ const ApplicationFormPage = () => {
 
     const { id } = useParams()
     
-    
+    const { form, setForm, onChange } = useFormApplication({ name: "", age: "", profession: "", country:"", applicationText:"" });
+
     useEffect(() => {
-        
         const Authorization = {
-        headers: { auth: localStorage.getItem("token") }
+            headers: { auth: localStorage.getItem("token") }
         }
         api.get(`trip/${id}`,Authorization )
         .then(res =>{
             setTrips(res.data.trip);
         })
-        .catch((err) => {
-            console.log(err);
+        .catch((error) => {
+           console.log(error)
         });
         
-    }, [id]);
+    }, [id,form]);
 
     const planetName = [trips].map(trip => trip.planet);
     const key = 'updatable';
-    const { form, onChange } = useFormApplication({ name: "", age: "", profession: "", country:"", applicationText:"" });
 
     const handleInputChange = (event) => {
         const { value, name } = event.target;
         onChange(value, name);
     };
-
-    const handleLogin = async (e) => {
+    const handleSubmitForms = async (e) => {
         e.preventDefault();
 
             try {
@@ -56,14 +54,14 @@ const ApplicationFormPage = () => {
                 
                 setTimeout(() => {
                     message.success({ content: 'Ok sua inscricao foi realizada', key, duration: 2 });
-
+                    setForm({name: "", age: "", profession: "", country:"", applicationText:""})
                 }, 1000);
 
             } catch (error) {
 
                 message.loading({ content: 'processando...', key });
                 setTimeout(() => {
-                    message.error({ content: 'Algo deu Errado!!!', key, duration: 2 });
+                    message.error({ content: 'Algo deu errado!!!', key, duration: 2 });
                 }, 1000);
             };
     }
@@ -75,7 +73,7 @@ const ApplicationFormPage = () => {
                 <ContainerMain>
                     <ContainerLogin>
                         <ContainerInput>
-                            <form onSubmit={handleLogin}>
+                            <form onSubmit={handleSubmitForms}>
                                 <h1>Formulário de Inscrição</h1>
                                 <input
                                     value={form.name}
@@ -121,7 +119,7 @@ const ApplicationFormPage = () => {
                                     >
                                     <Countries />
                                 </select>
-                                <button onclick={handleLogin}>Candidatar-se</button>
+                                <button type="submit">Candidatar-se</button>
                             </form>
                         </ContainerInput>
                     </ContainerLogin>
@@ -130,7 +128,8 @@ const ApplicationFormPage = () => {
                         .filter(planet => planet.name === planetName[0])
                         .map(planet =>{
                             return (
-                                <>
+                                <>  
+                                    <span key={planet.id}/>
                                     <p>{planet.name}</p>
                                     <img src={planet.url} alt="img" />
                                 </>

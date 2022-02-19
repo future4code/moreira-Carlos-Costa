@@ -11,7 +11,7 @@ const planets = [
     },
     {
         id: 3,
-        name: "Proxima Centauri",
+        name: "Proxima_Centauri",
         url: "https://imagens-traval.s3.amazonaws.com/alpha_centaury.png"
     },
     {
@@ -31,7 +31,7 @@ const planets = [
     },
     {
         id: 7,
-        name: "Jupiter",
+        name: "Júpiter",
         url: "https://imagens-traval.s3.amazonaws.com/jupter.png"
     }
 ];

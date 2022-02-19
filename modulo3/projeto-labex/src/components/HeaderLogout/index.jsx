@@ -45,10 +45,10 @@ const HeaderLogout = () => {
                 <li><img src={Logo} className="logo" alt="logo"/></li>
                 
                 <div id="list" className="links">
-                    <NavLink exact to="/" activeClassName="active" onClick={closeMobileMenu}>
+                    <NavLink exact to="/" activeclassname="active" onClick={closeMobileMenu}>
                         <li>Home</li>
                     </NavLink>
-                    <NavLink to="/travel" activeClassName="active" onClick={closeMobileMenu}>
+                    <NavLink to="/travel" activeclassname="active" onClick={closeMobileMenu}>
                         <li>Destinos</li>
                     </NavLink>
                     <li className="button_logout" onClick={onClickLogout}>Logout</li>
