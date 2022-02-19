@@ -5,7 +5,7 @@ export const Container = styled.div`
     height: 100vh;
 `
 export const Background = styled.div`
-    height: 100%;
+    height: 100vh;
 `
 export const ContainerMain = styled.div`
 
@@ -13,6 +13,7 @@ export const ContainerMain = styled.div`
     flex-direction:column;
     margin: 50px auto;
     width: 80%;
+    height: 80%;
     background-color:rgba(255,255,255,0.25);
     backdrop-filter: blur(1px);
     box-shadow: 0 8px 32px 0 rgb(31, 38, 135, 0.37);
