@@ -8,6 +8,7 @@ import AdminHomePage from './pages/AdminHomePage'
 import NotFound from './pages/NotFound';
 import ApplicationFormPage from './pages/ApplicationFormPage'
 import CreateTripPage from './pages/CreateTripPage'
+import TripDetailsPage from './pages/TripDetailsPage'
 
 
 const RoutesApp = () => {
@@ -21,6 +22,7 @@ const RoutesApp = () => {
                 <Route path="/admin" element ={<AdminHomePage />} />
                 <Route path="/aplication_form/:id" element ={<ApplicationFormPage />} />
                 <Route path="/create_trip" element ={<CreateTripPage />} />
+                <Route path="admin/trip_details/:id" element ={<TripDetailsPage />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter> 
