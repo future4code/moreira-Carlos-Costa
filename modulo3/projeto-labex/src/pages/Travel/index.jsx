@@ -18,19 +18,19 @@ import LoadingImage from "../../assets/loading.gif"
 
 import apiPlanets from "../../components/Planets.js"
 
-import {useFetch} from "../../hooks/useFetch"
+import { useFetch } from "../../hooks/useFetch"
 
 
 const Travel = () => {
-    const { data:travels, isLoading, error } = useFetch("https://us-central1-labenu-apis.cloudfunctions.net/labeX/carlos-costa-moreira/trips")
+    const { data: travels, isLoading, error } = useFetch("https://us-central1-labenu-apis.cloudfunctions.net/labeX/carlos-costa-moreira/trips")
 
-    const history=useNavigate()
+    const history = useNavigate()
 
-    const onClickGoToApplicationFormPage = (id) =>{
+    const onClickGoToApplicationFormPage = (id) => {
         history(`/aplication_form/${id}`)
-        
-      } 
-    
+
+    }
+
     return (
         <Container>
             <Background style={{ backgroundImage: `url(${BackgroundImg})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
@@ -41,15 +41,14 @@ const Travel = () => {
                 </ContainerMain>
                 <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                     <div className="loading">
-                         {isLoading && <img  src={LoadingImage}/>}
+                        {isLoading && <img src={LoadingImage} />}
                     </div>
                     {!isLoading && error && <h1>Algo deu errado!<span>: (</span></h1>}
                     {!isLoading && travels && travels.length > 0 && travels?.map(res => (
                         <SwiperSlide>
                             <Main>
-
                                 <MainLeft>
-                                    { apiPlanets
+                                    {apiPlanets
                                         .filter(planet => planet.name === res.planet)
                                         .map(planet => {
                                             return (
@@ -60,6 +59,7 @@ const Travel = () => {
                                 </MainLeft>
                                 <MainRight>
                                     <span>{res.planet}</span>
+                                    <p>{res.name}</p>
                                     <p>{res.description}</p>
                                     <MainFooter>
                                         <div>
@@ -74,7 +74,7 @@ const Travel = () => {
                                     </MainFooter>
                                     <hr style={{ width: '90%', margin: 0 }} />
                                     <div className="button">
-                                        <button onClick={() => {onClickGoToApplicationFormPage(res.id)}}>Inscreva-se</button>
+                                        <button onClick={() => { onClickGoToApplicationFormPage(res.id) }}>Inscreva-se</button>
                                     </div>
                                 </MainRight>
 

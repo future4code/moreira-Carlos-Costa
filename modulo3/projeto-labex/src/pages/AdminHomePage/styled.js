@@ -23,17 +23,19 @@ export const ContainerAdminHomePage = styled.div`
     border-radius: 10px;
     border: 1px solid rgba(255,255,255,0.18);
     border-radius: 4px;
+    overflow-y: scroll;
     
 
 `
 export const ContainerCard = styled.div`
-    margin: 100px auto;
+    margin: 50px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 4px;
     padding: 0px;
+    
 
 `
 export const CardTravel = styled.div`
@@ -42,6 +44,7 @@ export const CardTravel = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
+   
     
     ul {
         list-style: none;

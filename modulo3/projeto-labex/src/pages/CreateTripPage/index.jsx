@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import HearderLogout from "../../components/HeaderLogout"
 
-import { Container, Background, ContainerMain, Input, Fields, Select, Button } from "./styled"
+import { Container, Background, ContainerMain, Input, Fields, Select, Button, ContainerIcon } from "./styled"
 
 import api from "../../services/api"
 import BackgroundImg from "../../assets/background1.svg"
@@ -14,9 +14,12 @@ import { Planets } from '../../components/Selects'
 
 import { usePrivateRoute } from "../../hooks/usePrivateRoute"
 
+import { AiOutlineRocket } from "react-icons/ai"
+
 const CreateTrip = () => {
     usePrivateRoute()
     const history = useNavigate();
+
     const { form, onChange, setForm } = useFormApplication({
         name: "",
         planet: "",
@@ -50,7 +53,10 @@ const CreateTrip = () => {
                 <HearderLogout />
                 <form onSubmit={handleClickCreateTrip}>
                     <ContainerMain>
-                       
+                        <ContainerIcon onClick={() => {history("/admin")}}>
+                            <AiOutlineRocket style={{transform: "rotate(270deg)",fontSize:"3rem"}}/>
+                            <span>Voltar</span>
+                        </ContainerIcon>
                         <Fields> 
                             <h1>Criar Viagem</h1>
                             <Input

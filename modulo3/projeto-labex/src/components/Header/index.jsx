@@ -51,6 +51,9 @@ const Header = () => {
                     <NavLink to="/login" activeclassname="active" onClick={closeMobileMenu}>
                         <li>Login</li>
                     </NavLink>
+                    <NavLink to="/admin" activeclassname="active" onClick={closeMobileMenu}>
+                        <li>admin</li>
+                    </NavLink>
                     
                 </div>
                 

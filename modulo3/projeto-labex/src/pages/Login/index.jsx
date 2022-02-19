@@ -44,7 +44,7 @@ const Login = () => {
                 setTimeout(() => {
                     message.success({ content: 'Acesso Liberado', key, duration: 2 });
 
-                    history('/detail_travel');
+                    history('/admin');
                 }, 1000);
 
             } catch (error) {

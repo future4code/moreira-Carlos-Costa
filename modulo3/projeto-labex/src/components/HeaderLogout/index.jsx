@@ -51,7 +51,12 @@ const HeaderLogout = () => {
                     <NavLink to="/travel" activeclassname="active" onClick={closeMobileMenu}>
                         <li>Destinos</li>
                     </NavLink>
+                    <NavLink to="/create_trip" activeclassname="active" onClick={closeMobileMenu}>
+                        <li style={{border: '1px solid #FFFFFF', padding: '0.5em', borderRadius: '6px', margin: "0 60px"}}>Criar Viagem</li>
+                    </NavLink>
+                    
                     <li className="button_logout" onClick={onClickLogout}>Logout</li>
+                    
                 </div>
                 
             </ul>

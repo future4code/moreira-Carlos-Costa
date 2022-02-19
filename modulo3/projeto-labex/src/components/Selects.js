@@ -183,7 +183,7 @@ export const Countries=()=>{
 export const Planets=()=>{
   return(
     <>
-    <option value="Europa">Europa</option>
+      <option value="Europa">Europa</option>
       <option value="Lua">Lua</option>
       <option value="Titan">Titan</option>
       <option value="Marte">Marte</option>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
@@ -9,7 +9,8 @@ export const Container = styled.div`
     
 `
 export const Background = styled.div`
-    height: 100vh;
+    height: 100%;
+    
 
 `
 export const ContainerMain = styled.div`
@@ -22,6 +23,15 @@ export const ContainerMain = styled.div`
     border-radius: 10px;
     border: 1px solid rgba(255,255,255,0.18);
     
+
+`
+export const ContainerIcon = styled.div`
+        display: flex;
+        align-items: center;
+        margin: 20px;
+        font-size: 1.4rem;
+        color: #ffffff;
+        cursor: pointer;
 
 `
 export const Fields = styled.div`
