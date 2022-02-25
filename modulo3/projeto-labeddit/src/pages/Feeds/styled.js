@@ -16,18 +16,19 @@ export const ContainerPost = styled.div`
 `
 export const Input = styled.input`
     width: 90vw;
-    padding: 1px 20px;
+    padding: 10px 20px;
     margin: 0 20px;
     background-color:#f2f2f2;
     border:0;
     border-radius: 4px;
+    font-size: 1rem;
     &:hover {
         background-color: #FFFFFF;
         border: 1px solid #9D9797;
     }
 `
 export const Icon = styled.div`
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color:#9D9797;
     cursor: pointer;
     
@@ -40,18 +41,28 @@ export const Icon = styled.div`
 export const ContainerGrid = styled.div`
     padding: 10px 20px;
     display: grid;
-    grid-template-columns: 5fr 1fr;
+    grid-template-columns: 1fr;
     gap: 40px;
     
    
 `
 export const SectionFedds = styled.div`
     background-color: #FFFFFF;
-    min-height: 70vh;
     border-radius: 4px;
 `
-export const SectionRight = styled.div`
-background-color: #FFFFFF;
-border-radius: 4px;
-   
+
+export const ContainerVotes = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: #f2f2f2;
+    width: auto;
+    height: 100%;
+    padding: 4px;
+    margin-right: 50px;
+`
+export const Button = styled.button`
+    margin-top: 50px;
+    cursor: pointer;
 `
