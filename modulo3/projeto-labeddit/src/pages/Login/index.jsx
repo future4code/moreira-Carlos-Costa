@@ -79,9 +79,8 @@ const Login = () => {
                 value={form.password}
                 onChange={handleInputChange}
                 placeholder={"Senha"}
-                pattern={"\\w{8,}"}
                 title={"A senha deve conter no mínimo 8 caracteres"}
-                required
+            
                 />
                 <Button>Entrar</Button>
                 <NextSignup>
