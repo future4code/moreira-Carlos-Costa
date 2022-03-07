@@ -4,6 +4,8 @@ export const Container = styled.div`
     background-color: #FFFFFF;
     width: 100%;
     height: 50px;
+
+    
     
 `
 export const Ul = styled.ul`
@@ -27,18 +29,16 @@ export const Li = styled.li`
     color:#9D9797;
     cursor: pointer;
         
-`
-export const Input = styled.input`
-    
-    width: 60vw;
-    padding:4px;
-    border: 0.3px solid #9D9797;
-    border-radius: 4px;
-        
-   
+    @media (min-width: 320px) and (max-width: 480px) {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2rem;
+    padding: 3px 5px;
+    }
 `
 export const Icon = styled.div`
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    color: #FF4500;
         
    
 `

@@ -33,13 +33,11 @@ const Signup = () => {
             message.loading({ content: 'Processando...', key });
             const response = await api.post('users/signup', data);
             const { token } = response.data;
-
-
             localStorage.setItem('token', token);
             setTimeout(() => {
                 message.success({ content: 'Acesso Liberado', key, duration: 2 });
 
-                history('/');
+                history('/feeds');
             }, 1000);
 
         } catch (error) {
@@ -54,7 +52,7 @@ const Signup = () => {
         <Container>
             <Form onSubmit={handleSignup}>
                 <Logo>
-                    <AiFillRedditCircle style={{fontSize: 70, color:"#FFFFFF"}}/>
+                    <AiFillRedditCircle style={{fontSize: 70, color:"#E54801"}}/>
                     <Text>LabEddit</Text>
                 </Logo>
                 <Input 
@@ -62,7 +60,7 @@ const Signup = () => {
                 name={'name'}
                 value={form.name}
                 onChange={handleInputChange}
-                placeholder={"Name do usuário"}
+                placeholder={"Nome do usuário"}
                 pattern={"^([a-zA-Z]|[à-ú]|[À-Ú]|[ ])+$"}
                 title={"Nome inválido"}
                 required

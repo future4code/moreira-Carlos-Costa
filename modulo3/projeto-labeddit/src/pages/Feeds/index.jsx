@@ -2,19 +2,16 @@ import React, { useState, useEffect } from 'react'
 import { usePrivateRoute } from '../../hooks/usePrivateRoutes'
 import Header from '../../components/Header'
 
-import CommentTextArea from '../../components/TextArea'
-import Comments from '../../components/Comments'
+import { useNavigate, Link} from 'react-router-dom'
 
-import { Link } from 'react-router-dom'
-
-import { Container, ContainerPost, Icon, Input, ContainerGrid, SectionFedds, SectionRight, Button } from './styled'
+import { Container, ContainerPost, Icon, Input, ContainerGrid, SectionFedds, ContainerVotes, ButtonStyle } from './styled'
 
 import api from '../../services/api'
 
-import { List, Avatar, message, Drawer, Comment, Space } from 'antd';
-import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
+import { List, Avatar, message, Comment, Space, Spin} from 'antd';
+import { MessageOutlined, LoadingOutlined } from '@ant-design/icons';
 
-import { AiOutlineReddit, AiOutlineApi, AiOutlineComment } from 'react-icons/ai'
+import { AiOutlineReddit, AiOutlineApi, AiOutlineSearch } from 'react-icons/ai'
 import { MdOutlineInsertPhoto } from 'react-icons/md'
 import { CgArrowUpR, CgArrowDownR } from 'react-icons/cg'
 
@@ -24,149 +21,145 @@ import 'moment/locale/pt-br'
 const Feeds = () => {
     const [posts, setPosts] = useState([])
     const [visible, setVisible] = useState(false);
-
-    const [comentarios, setComentarios] = useState([])
-    const [handleInput, setHandleInput] = useState()
+    const [ search, setSearch ] = useState('')
 
     usePrivateRoute()
     const token = localStorage.getItem('token')
+    const history = useNavigate()
 
     useEffect(() => {
-        api.get(`posts/?page=1&size=100`, { headers: { Authorization: token } })
+        api.get(`posts/?page=1&size=150`, { headers: { Authorization: token } })
             .then((res) => {
                 setPosts(res.data)
             }).catch((error) => {
                 console.log(error.response.data)
             })
             
-    }, []);
+    }, [token, posts]);
 
+    const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
     const key = 'updatable';
     const IconText = ({ icon, text }) => (
         <Space>
             {React.createElement(icon)}
             {text}
         </Space>
-    );
+    )
+
     const votePost = async (vote, id) => {
         const body = {
             "direction": vote
         }
 
-        api.put(`posts/${id}/votes
-            `, body, {
+        api.put(`posts/${id}/votes`, body, {
             headers: {
                 Authorization: token
             }
         }).then((res) => {
             message.loading({ content: 'Processando...', key });
             setTimeout(() => {
-                message.success({ content: 'Curtida enviadoa com sucesso!', key, duration: 2 });
-
+                message.success({ content: 'Seu voto foi enviada com sucesso!', key, duration: 2 });
+                
             }, 1000);
         }).catch((error) => {
             setTimeout(() => {
                 message.success({ content: `${error.response.data}`, key, duration: 2 });
-
+                
             }, 1000);
         })
 
     }
-    const createComment = (id) => {
 
-        const body = {
-            body: handleInput
-        }
-        api.post(`posts/${id}/comments`, body, { headers: { Authorization: token } })
-            .then((res) => {
+    const DeletePostVote = (id) => {
+        api.delete(`posts/${id}/votes`, { headers: { Authorization: token } })
+            .then((response) => {
                 message.loading({ content: 'Processando...', key });
                 setTimeout(() => {
-                    message.success({ content: 'Comentário criado com sucesso!', key, duration: 2 });
+                    message.success({ content: 'Voto foi deletado com sucesso!', key, duration: 2 });
 
                 }, 1000);
                 setVisible(false)
-                setHandleInput('')
-            }).catch((error) => {
-                console.log(error)
-            })
-    }
-
-    const getCommentId = (id) => {
-
-        api.get(`posts/${id}/comments`, { headers: { Authorization: token } })
-            .then((res) => {
-                setComentarios(res.data)
             }).catch((error) => {
                 console.log(error.response.data)
             })
     }
-    const inputText = (e) => {
-        setHandleInput(e.target.value)
-    }
 
-    const onClose = () => {
-
-        setVisible(false)
-
-    }
-    
     moment.locale('pt-br')
 
+    const filteredPost = posts.filter(result => {
+		return result.username.toLowerCase().includes(search.toLowerCase())
+	
+	})
     return (
 
         <>
             <Container>
-                <Header />
+                <Header 
+                posts={posts}
+                />
                 <ContainerPost>
-                    <Icon>
-                        <AiOutlineReddit />
-                    </Icon>
-                    <Link to='/post'>
-                        <Input placeholder="Postar" />
-                    </Link>
-                    <Icon>
-                        <MdOutlineInsertPhoto />
-                    </Icon>
-                    <Icon>
-                        <AiOutlineApi />
-                    </Icon>
+                    
+                   
+                        <Input onClick={() =>{history('/post')}}placeholder="Postar" />
+                    
+                    
                 </ContainerPost>
                 <ContainerPost>
+                    <Input 
+                    type="text" 
+                    placeholder="Buscar no LabEddit" 
+                    onChange={e => setSearch(e.target.value)}
+                    
+                    />
+                    <AiOutlineSearch style={{ position: 'absolute', right: 80, fontSize: '1.4rem' }} />
                 </ContainerPost>
                 <ContainerGrid>
                     <SectionFedds>
                         <>
+                            {posts.length === 0 ? (
+                        
+                            <Spin indicator={antIcon} style={{display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 50}} />
+                            )
+                            : 
+                            (
                             <List
                                 size="large"
                                 pagination={{
                                     
-                                    pageSize: 5,
+                                    pageSize:5,
                                 }}
-                                dataSource={posts}
+                                dataSource={filteredPost}
                                 bordered
                                 renderItem={item => (
-                                    <>
+                                    <>                                    
                                         <List.Item
                                             key={item.id}
                                             actions={[
-
-                                                <Button onClick={() =>  {getCommentId(item.id, setVisible(true))}}>Comentar</Button>
+                                                <Link to={`comments/${item.id}`}>
+                                                <ButtonStyle>Comentar</ButtonStyle>
+                                                </Link>
+                                                
                                                 
                                             ]}
+                                            
                                         >
-
+                                            <ContainerVotes>
+                                                <CgArrowUpR style={{cursor: 'pointer'}} onClick={item.userVote === null ? () => {votePost(1, item.id)} : () => {DeletePostVote(item.id)}}/> 
+                                                {item.voteSum}
+                                                <CgArrowDownR style={{cursor: 'pointer'}} onClick={item.userVote === null ? () => {votePost(-1, item.id)} : () => {DeletePostVote(item.id)}}/>
+                                            </ContainerVotes> 
                                             <Comment
                                                 author={
                                                     <span>
                                                         <p>{item.username}</p>
-                                                        <p>postado: {moment(`${item.createdAt}`).fromNow()}</p>
+                                                        <p>postado {moment(`${item.createdAt}`).fromNow()}</p>
                                                     </span>
 
                                                 }
                                                 avatar={
                                                     <Avatar src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png" alt="Han Solo" />}
                                                 content={[
-                                                    <p style={{ fontWeight: 'bold' }}>{item.title}</p>,
+                                                    <p style={{ fontWeight: 'bold', width: '70vw' }}>{item.title}</p>,
                                                     <p style={{ color: '#84868a',width: '70vw' }}>{item.body}</p>
                                                 ]}
                                                 actions={[
@@ -174,34 +167,13 @@ const Feeds = () => {
                                                     <IconText icon={MessageOutlined} text={item.commentCount} key="list-vertical-message" />,
                                                 ]}
 
-                                            />
-                                            
+                                            />                                          
                                         </List.Item>
-                                        <Drawer
-                                            width={640}
-                                            placement="right"
-                                            closable={false}
-                                            onClose={onClose}
-                                            visible={visible}
-                                        >
-                                            <CommentTextArea
-                                                placeholder={'Digite aqui seu comentario!'}
-                                                required
-                                                type={'text'}
-                                                name={'comentario'}
-                                                value={handleInput}
-                                                onChange={inputText}
-                                            />
-                                            <Button onClick={() => { console.log(createComment(item.id)) }}>Criar Comentário</Button>
-                                            <Comments
-                                                comments={comentarios}
-                                            />
-                                        </Drawer>
-
                                     </>
                                 )}
                             />
-
+                            
+                            )}
                         </>
                     </SectionFedds>
                 </ContainerGrid>

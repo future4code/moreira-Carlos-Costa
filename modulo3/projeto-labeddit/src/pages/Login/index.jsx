@@ -60,7 +60,7 @@ const Login = () => {
         <Container>
             <Form onSubmit={handleLogin}>
                 <Logo>
-                    <AiFillRedditCircle style={{fontSize: 70, color:"#FFFFFF"}}/>
+                    <AiFillRedditCircle style={{fontSize: 70, color:"#E54801"}}/>
                     <Text>LabEddit</Text>
                 </Logo>
                 <Input

@@ -1,9 +1,15 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-
+    
+    @media (min-width: 320px) and (max-width: 480px) {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
 `
 export const ContainerPost = styled.div`
+    position: relative;
     margin: 12px 20px;
     height: 60px;
     background-color:#FFFFFF;
@@ -15,7 +21,7 @@ export const ContainerPost = styled.div`
     padding: 0 20px;
 `
 export const Input = styled.input`
-    width: 90vw;
+    width: 100%;
     padding: 10px 20px;
     margin: 0 20px;
     background-color:#f2f2f2;
@@ -43,12 +49,28 @@ export const ContainerGrid = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
+
+    @media (min-width: 320px) and (max-width: 480px) {
+        margin: 0;
+        padding: 0;
+    }
     
-   
 `
 export const SectionFedds = styled.div`
     background-color: #FFFFFF;
     border-radius: 4px;
+
+    @media (min-width: 320px) and (max-width: 480px) {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    @media (min-width: 481px) and (max-width: 767px) {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
 `
 
 export const ContainerVotes = styled.div`
@@ -60,9 +82,22 @@ export const ContainerVotes = styled.div`
     width: auto;
     height: 100%;
     padding: 4px;
-    margin-right: 50px;
+    font-weight: 200;
 `
-export const Button = styled.button`
+export const ButtonStyle = styled.button`
     margin-top: 50px;
     cursor: pointer;
+
+    @media (min-width: 481px) and (max-width: 767px) {
+        position: absolute;
+        top: 40px;
+        right: 50px;
+    }
 `
+/**
+@media (min-width: 768px) and (max-width: 1024px) {}
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {}
+@media (min-width: 481px) and (max-width: 767px) {}
+@media (min-width: 320px) and (max-width: 480px) {}
+
+ */

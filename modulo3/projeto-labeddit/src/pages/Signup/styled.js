@@ -3,13 +3,16 @@ import styled from "styled-components"
 export const Container = styled.div`
     height: 100vh;
     overflow: hidden;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
  
 `
 export const Form = styled.form`
     margin: 100px auto;
     width: 60%;
     padding: 50px 0;
-
+    background: #535353;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -148,18 +151,14 @@ export const NextSignup = styled.div`
     flex-direction: row;
     justify-content: space-around;
     width: 30%;
- 
-    @media (min-width: 768px) and (max-width: 1024px) {}
-    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {}
+
+    @media (min-width: 320px) and (max-width: 480px) {
+        width: 80%;
+        padding: 5px;
+
+    }
     @media (min-width: 481px) and (max-width: 767px) {
         width: 50%;
     }
-    @media (min-width: 320px) and (max-width: 480px) {}
+    
 `
-/**
-@media (min-width: 768px) and (max-width: 1024px) {}
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {}
-@media (min-width: 481px) and (max-width: 767px) {}
-@media (min-width: 320px) and (max-width: 480px) {}
-
- */

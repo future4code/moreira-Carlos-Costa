@@ -4,46 +4,38 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     height: 100vh;
-    justify-content: space-between;
     align-items: center;
-
-    @media (min-width: 320px) and (max-width: 480px) {
-       
-        width: 100%;
-        height: 100vh;
-        padding: 0;
-    }
     
 `
 export const Content = styled.div`
     position: relative;
     display: grid;
+    margin-top: 50px;
     padding: 30px 50px;
     grid-template-columns:2fr 1fr;
     gap: 50px;
     width: 80%;
-    height: 80vh;
     border-radius: 10px;
 
     @media (min-width: 320px) and (max-width: 480px) {
-        display: flex;
-        flex-direction: column;
+        position: relative;
+        display: grid;
+        margin-top: 50px;
+        padding: 0;
+        grid-template-columns:1fr;
         gap: 50px;
         width: 100%;
-        height: 100vh;
-        padding: 0;
         
     }
-    
     @media (min-width: 481px) and (max-width: 767px) {
         position: relative;
         display: grid;
+        margin-top: 50px;
         padding: 0;
         grid-template-columns:1fr 1fr;
-        gap: 10px;
         width: 100%;
-        height: 100vh;
     }
+    
 `
 export const CommentTextArea = styled.form`
     border: 1px solid #ccc;
@@ -53,26 +45,10 @@ export const CommentTextArea = styled.form`
     
 
     @media (min-width: 320px) and (max-width: 480px) {
-        display: flex;
-        flex-direction: column;
         width: 100%;
-        height: 100vh;
+        height: 80vh;
         
     }
-
-    
-    @media (min-width: 481px) and (max-width: 767px) {
-        height: 100%;
-        
-    }
-`
-export const InputTitle = styled.input`
-    margin-bottom: 50px;
-    border: 1px solid #ccc;
-    width: 100%; 
-    background-color:#FFFFFF;
-    padding: 10px;
-    
 `
 export const Rules = styled.div`
     display: flex;
@@ -82,13 +58,23 @@ export const Rules = styled.div`
     height: 80%; 
     background-color:#FFFFFF;
     
-    @media (min-width: 481px) and (max-width: 767px) {
-        height: 100%;
+    
+`
+export const CommentsPost = styled.div`
+    border: 1px solid #ccc;
+    width: 75%;
+    background-color:#FFFFFF;
+    padding: 30px;
+    
+
+    @media (min-width: 320px) and (max-width: 480px) {
+        width: 100%;
         
     }
+    
 `
 export const H2 = styled.h2`
-    color: #FFFFFF;
+    color: #000000;
     font-size: bold;
     
 `
@@ -99,6 +85,11 @@ export const Title = styled.p`
 `
 export const Ol = styled.ol`
     margin: 10px 10px;
+    
+`
+export const Ul = styled.ul`
+    margin: 10px 10px;
+    list-style: none;
     
 `
 export const Li = styled.li`
@@ -128,3 +119,24 @@ export const Button = styled.button`
     cursor: pointer;
 
 `
+export const CardComment = styled.div`
+    
+`
+export const ContainerVotes = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: #f2f2f2;
+    width: auto;
+    height: 100%;
+    padding: 4px;
+    font-weight: 200;
+`
+/**
+@media (min-width: 768px) and (max-width: 1024px) {}
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {}
+@media (min-width: 481px) and (max-width: 767px) {}
+
+
+ */

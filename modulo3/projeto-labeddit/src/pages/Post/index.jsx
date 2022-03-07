@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Container, Content, CommentTextArea, InputTitle, Rules,H2, Ol, Li, Title, P, Button } from './styled'
 import Header from '../../components/Header'
 
@@ -8,11 +8,10 @@ import api from '../../services/api'
 
 import { message, Input } from 'antd';
 
-import { AiFillRedditCircle } from 'react-icons/ai'
-
 import {useForm} from '../../hooks/useForms'
 import { usePrivateRoute } from "../../hooks/usePrivateRoutes"
 
+import { IoReturnUpBackOutline } from 'react-icons/io5'
     
 const Post = () => {
 
@@ -22,7 +21,7 @@ const Post = () => {
     const history = useNavigate()
     const key = 'updatable';
 
-    const {form, onChange, setForm} = useForm({title: '', body: ''})
+    const {form, onChange } = useForm({title: '', body: ''})
     const token = localStorage.getItem('token')
 
     const handleCreatePost = async (e) => {
@@ -56,6 +55,7 @@ const Post = () => {
     return (
         <Container>
             <Header />
+            <Button style={{width: 100, display: 'flex', justifyContent: 'center', alignItems: 'center'}} onClick={() => history('/feeds')}><IoReturnUpBackOutline style={{fontSize: 20, weight: 800}}/>Voltar</Button>
             <Content>
                 <H2 style={{position:'absolute',top: 0, left: 50}}>Postar</H2>
                 <CommentTextArea onSubmit={handleCreatePost}>

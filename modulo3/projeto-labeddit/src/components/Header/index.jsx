@@ -1,20 +1,27 @@
-import React from 'react';
-
-import { Container, Ul, Li, Input, Icon } from './styled'
+import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom'
+import { Container, Ul, Li, Icon } from './styled'
 import { Tooltip } from 'antd';
 
-
 import {
-    AiOutlineVideoCameraAdd,
-    AiOutlineMessage,
-    AiOutlineAlert,
-    AiOutlinePlus,
-    AiOutlineUser,
+    
+    AiOutlineLogout,
     AiFillRedditCircle,
-    AiOutlineDown,
-    AiOutlineSearch
+    
 } from 'react-icons/ai'
+
+
 const Header = () => {
+
+    const history = useNavigate()
+
+    const handleLogout = () => {
+        localStorage.clear();
+
+        history('/')
+    }
+
+    
     return (
         <Container>
             <Ul>
@@ -22,47 +29,12 @@ const Header = () => {
                     <AiFillRedditCircle style={{ fontSize: '1.8rem' }} />
                     <span>LabEddit</span>
                 </Li>
-                <Li style={{ position: 'relative' }} >
-                    <Input type="text" placeholder="Buscar no LabEddit" />
-                    <AiOutlineSearch style={{ position: 'absolute', right: 50, fontSize: '1.4rem' }} />
+                <Li>
                 </Li>
                 <Li>
-                    <Ul>
-                        <Li>
-                            <Icon>
-                                <Tooltip placement="top" title={'Videos'}><AiOutlineVideoCameraAdd /></Tooltip>
-                            </Icon>
-
-                        </Li>
-                        <Li>
-                            <Icon>
-                                <Tooltip placement="top" title={'Chat'}><AiOutlineMessage /></Tooltip>
-                            </Icon>
-
-                        </Li>
-                        <Li>
-                            <Icon>
-                                <Tooltip placement="top" title={'Notificação'}><AiOutlineAlert /></Tooltip>
-                            </Icon>
-
-                        </Li>
-                        <Li>
-                            <Icon>
-                                <Tooltip placement="top" title={'Post'}><AiOutlinePlus /></Tooltip>
-                            </Icon>
-
-                        </Li>
-                    </Ul>
-                </Li>
-                <Li style={{ fontSize: '1.4rem' }}>
                     <Icon>
-                        <Tooltip placement="top" title={'Usuário'}><AiOutlineUser /></Tooltip>
+                        <Tooltip placement="top" title={'Sair'}><AiOutlineLogout onClick={()=> {handleLogout()}}/></Tooltip>
                     </Icon>
-
-                    <Icon>
-                        <AiOutlineDown />
-                    </Icon>
-
                 </Li>
             </Ul>
         </Container>
