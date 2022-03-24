@@ -1,3 +1,10 @@
+// a)
+// const minhaString: string = 9
+
+// b)
+const meuNumero: number | string = "9"
+
+// c) e d)
 
 enum Cores {
     Azul = 'Azul',
