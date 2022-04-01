@@ -3,6 +3,8 @@ import {users, User} from '../DataUsers'
 
 export const userController = {
 
+ 
+  
     index: (req: Request, res: Response) => {
         const result = users.map(user => ({
             id: user.id,
@@ -36,6 +38,27 @@ export const userController = {
         }
     },
     
+    showName: (req: Request, res: Response) => {
+      let errorCode: number = 400;
+      let result: User[] = users
+      try {
+          if (!req.query.name) {
+              errorCode = 404
+              throw new Error("User not found");
+            }
+          
+            if (req.query.name) {
+                result = result.filter(
+                    user => user.name.includes(req.query.name as string)
+                )
+            }
+          
+        res.status(200).send(result);
+          
+      } catch (error: any) {
+          res.status(400).send(error.message);
+    }
+},
     update: (req: Request, res: Response) => {
         let errorCode = 500.
         try {
@@ -57,26 +80,6 @@ export const userController = {
         } catch (err: any) {
             res.status(errorCode).send({ message: err.message || "Erro interno. Aguarde um momento e tente novamente." });
         }
-    },
-    showName: (req: Request, res: Response) => {
-    let errorCode: number = 400;
-    let result: User[] = users
-    try {
-        if (!req.query.name) {
-            errorCode = 404
-            throw new Error("User not found");
-          }
-  
-          if (req.query.name) {
-              result = result.filter(
-                  user => user.name.includes(req.query.name as string)
-              )
-          }
-
-      res.status(200).send(result);
-
-    } catch (error: any) {
-        res.status(400).send(error.message);
-  }
-}
+    }
+    
 }
