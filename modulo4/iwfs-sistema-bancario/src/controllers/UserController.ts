@@ -5,67 +5,35 @@ export const userController = {
 
     store: (req: Request, res: Response) => {
         
-        let codigoErro = 400
+        let errorCode = 400
         try {
-        
-            const { nome, cpf, dataDeNascimento } = req.body
-            const stringCPF: string = cpf.split(".").join("").split("-").join("");
-        
-            function formatarData(data: string) {
-                let dia: string = ""
-                let mes: string = ""
-                let ano: string = ""
-                for (let i = 0; i < data.length; i++) {
-                    if (i < 2) {
-                        dia += data[i]
-                    }
-                    if (i > 2 && i < 5) {
-                        mes += data[i]
-                    }
-                    if (i > 5 && i < 10) {
-                        ano += data[i]
-                    }
-                }
-                return (`${ano}/${mes}/${dia}`)
+            const nome: string = req.body.nome
+            const cpf: string = req.body.cpf
+            const dataDeNascimento:string = req.body.dataDeNascimento
+            const saldo: number = req.body.saldo
+            const dataSplit: string[] = dataDeNascimento.split('/')
+            const anoNascimento: string = dataSplit[2]
+            console.log(anoNascimento, dataDeNascimento)
+            if (!nome || !cpf || !anoNascimento) {
+                errorCode = 422
+                throw new Error('Por favor, verifique suas informações. Nome, CPF e ano de nascimento são de preenchimento obrigatório')
             }
-        
-        
-            if (!nome || !cpf || !dataDeNascimento) {
-                codigoErro = 422
-                throw new Error("Por gentileza, verifique os campos de entrada para criação da conta.")
-            }
-        
-            let idadeUsuario = (Date.now() - new Date(formatarData(dataDeNascimento)).getTime()) / 3.1568 * (Math.pow(10, -10))
-        
+            const idadeUsuario: number = 2022 - Number(anoNascimento)
             if (idadeUsuario < 18) {
-                codigoErro = 422
-                throw new Error("Para abertura de uma conta você deve ter mais que 18 anos.")
+                errorCode = 406
+                throw new Error('A criação de contas só é permitida a usuários maiores de 18 anos')
             }
-        
             const novoUsuario: User = {
-                nome,
-                cpf,
-                dataDeNascimento,
-                saldo: 0,
+                nome: nome,
+                dataDeNascimento: dataDeNascimento,
+                cpf: cpf,
+                saldo: saldo,
                 extratoDados: []
             }
-            if (stringCPF.length !== 11 || isNaN(Number(stringCPF))) {
-                codigoErro = 422
-                throw new Error("O CPF para criação está incorreto. Por gentileza, verifique se há onze digitos e todos são números")
-            }
-        
-            for (let i = 0; i < users.length; i++) {
-                if (users[i].cpf === cpf) {
-                    codigoErro = 409
-                    throw new Error("Não foi possível realizar o seu cadastro. Um usuário já possui o CPF informado.")
-                }
-            }
-        
             users.push(novoUsuario)
-            res.status(201).send("Usuario criado com suceso!")
-        
-        } catch (err: any) {
-            res.status(codigoErro).send(err.message)
+            res.status(201).send({ message: 'usuário criado com sucesso' })
+        } catch (error: any) {
+            res.status(errorCode).send({ message: error.message })
         }
     },
     index: (req: Request, res: Response) => {
@@ -81,40 +49,40 @@ export const userController = {
         }
     },
     show: (req: Request, res: Response) => {
-        let codigoErro = 500
+        let codeError = 500
     
         try {
-            const nome: string = req.params.nome as string
-            const cpf: string = req.params.cpf as string
-            let buscaUsuario: User[] | undefined = []
-            let isUsuarioFound = false
-        
-            const stringCPF: string = cpf.split(".").join("").split("-").join("")
-        
-            if (stringCPF.length !== 11 || isNaN(Number(stringCPF))) {
-                codigoErro = 422
-                throw new Error("O CPF para criação está incorreto. Por gentileza, verifique se há onze digitos e todos são números")
+            const nome: string = req.query.nome as string
+            const cpf: string = req.query.cpf as string
+            const usuario: User | undefined = users.find((usuario) => usuario.nome.toLowerCase() === nome.toLowerCase() && usuario.cpf === cpf)
+            if (!usuario) {
+                codeError = 404
+                throw new Error('Usuário não encontrado')
             }
-        
-            for (let i = 0; i < users.length; i++) {
-                if (users[i].nome === nome && users[i].cpf === cpf) {
-                    buscaUsuario.push(users[i])
-                    isUsuarioFound = true
-                }
-            }
-        
-            if (!isUsuarioFound) {
-                codigoErro = 404
-                throw new Error("Usuário com este nome  e/ou CPF não foi encontrado.")
-            }
-        
-            if (!users) {
-                throw new Error("Erro na requisição. Por gentileza, tente novamente mais tarde.")
-            }
-            res.status(200).send(buscaUsuario)
-        
-        } catch (err: any) {
-            res.status(codigoErro).send(err.message)
+            res.status(200).send(`Seu saldo é de R$${usuario.saldo}`)
+        } catch (error: any) {
+            res.status(codeError).send({ message: error.message })
         }
-}
+    },
+    update: (req: Request, res: Response) => {
+        let errorCode: number = 400
+    try {
+        const nome = req.query.nome
+        const cpf = req.query.cpf
+        const saldo = Number(req.body.saldo)
+    
+        const conta = users.find((conta) => {
+            return conta.nome == nome && conta.cpf == cpf
+        })
+        if (conta != null && conta != undefined) {
+            conta.saldo = Number(conta.saldo) + saldo
+            console.log(conta)
+            res.status(200).send("O seu novo saldo é: " + conta.saldo)
+        } else {
+            res.status(404).send("Não encontrada conta com esses dados.")
+        }
+    } catch (error: any) {
+        res.status(errorCode).send({ message: error.message })
+    }
+    }
 }
