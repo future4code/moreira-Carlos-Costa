@@ -112,25 +112,25 @@ _____
 ### Exercicio 6
 a) 
 ```
-alter table Filmes add data_limite date;
+alter table Movie add data_limite date;
 ```
 
 b) 
 ```
-alter table Filmes change avaliacao avaliacao float;
+alter table Movie change rating rating float;
 ```
 
 c)  
 ```
-update Filmes set data_limite = "2020-12-31" where id = "003";
+update Movie set data_limite = "2020-12-31" where id = "003";
 
-update Filmes set data_limite = "2015-12-31" where id = "001";
+update Movie set data_limite = "2015-12-31" where id = "001";
 ```
 d)  
 ```
-delete from Filmes where id = "003";
+delete from Movie where id = "003";
 
-update Filmes set sinopse = "deletado" where id = "003";
+update Movie set sinopse = "deletado" where id = "003";
 
 Teve sucesso mas nenhuma linha foi afetada.
 ```
