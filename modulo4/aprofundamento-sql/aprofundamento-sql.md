@@ -122,9 +122,9 @@ alter table Movie change rating rating float;
 
 c)  
 ```
-update Movie set data_limite = "2020-12-31" where id = "003";
+update Movie set playing_limit_date = "2020-12-31" where id = "003";
 
-update Movie set data_limite = "2015-12-31" where id = "001";
+update Movie set playing_limit_date = "2015-12-31" where id = "001";
 ```
 d)  
 ```
