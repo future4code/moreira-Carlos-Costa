@@ -1,0 +1,23 @@
+GET http://localhost:3333/users
+Content-Type: application/json
+
+###
+GET http://localhost:3333/users/search?type=ADMIN
+Content-Type: application/json
+
+###
+GET http://localhost:3333/users/search/name?name=Alice
+Content-Type: application/json
+
+###
+PUT http://localhost:3333/users
+content-type: application/json
+
+{
+    
+    "name": "Clarice Costa",
+    "email": "clarice@email.com",
+    "type": "ADMIN",
+    "age": "06"
+    
+}
