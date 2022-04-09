@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+<h4 align="center"> 
+	🚧  Labex Projeto Concluido 🚀 🚧
+</h4>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Link Surge
+[Link](https://fumbling-experience.surge.sh/)
 
-## Available Scripts
+#### Acesso
+- astrodev@gmail.com
+- 123456
+## ⚙️ Funcionalidades
 
-In the project directory, you can run:
+  - [x] `Criar Wireframe`.
+  - [x] `Conhecendo a API`.
+  - [x] `HomePage.js`  → Para o usuário escolher entre Área Administrativa e Lista de Viagens.
+ - [x] `ListTripsPage.js` → Para vermos todas as viagens.
+- [x] `ApplicationFormPage.js` → Para o usuário se candidatar à viagens, página que vai ter o formulário de inscrição.
+- [x] `LoginPage.js` → Para fazermos login como administrador.
+- [x] `AdminHomePage.js` → Para o administrador ver a lista de viagens e poder deletá-las ou acessar o detalhe de cada uma delas
+- [x] `TripDetailsPage.js` → Para o administrador ver o detalhe de uma viagem específica, bem como os candidatos que aplicaram para ela
+- [x] `CreateTripPage.js` → Formulário para o administrador criar uma nova viagem
+---
+### 🏅  Desafios
+- [x] Criar funcionalidade de logout do admin
+- [x] Fazer loadings para as requisições de get
+- [x] Fazer loadings para as requisições de post (dica: elas se iniciam quando você aperta um botão e finalizam no caso de sucesso ou erro da requisição)
+- [x] Faça o seu site ser responsivo para funcionar bem em celulares (para testar, use o iphone 5/6/7 no navegador)
+---
+### 🎨 Layout
+O layout da aplicação está disponível no Figma:
 
-### `npm start`
+[Figma](https://www.figma.com/file/9NzDDNrc8TzHRRJ5up8bmw/space-tourism-website?node-id=0%3A1)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
+### Responsivo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p align="center" >
+  
+ <img src="https://user-images.githubusercontent.com/14335370/154939236-a8040934-e43e-41c5-bbe4-e3515e627911.png" width="200px">
+<img src="https://user-images.githubusercontent.com/14335370/154939451-92589f1d-a047-43fc-98a4-68dd14a2a9c8.png" width="200px")>
+<img src="https://user-images.githubusercontent.com/14335370/154939700-819a8ead-2834-495c-b406-cfebc8ce57dc.png" width="200px")>
 
-### `npm test`
+</p>
+<p align="center" >
+  
+ <img src="https://user-images.githubusercontent.com/14335370/154939989-ef1d6197-0dad-4891-ac80-020ebebdb023.png" width="200px">
+<img src="https://user-images.githubusercontent.com/14335370/154940192-e378ab6d-32c4-4c2d-87d1-0b9faf1cf016.png" width="200px")>
+<img src="https://user-images.githubusercontent.com/14335370/154940400-396b385f-98fa-4782-8abe-bbae228098d4.png" width="200px")>
+<img src="https://user-images.githubusercontent.com/14335370/154940793-f1c9c319-38f8-4003-9590-bcd304a2c1eb.png" width="200px")>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</p>
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Web
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tela Home
+![Captura de tela de 2022-02-15 16-25-11](https://user-images.githubusercontent.com/14335370/154134247-f8bf175d-3700-4eec-9693-ce0ce3d37beb.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Tela ListTripsPage
+![Captura de tela de 2022-02-15 16-27-24](https://user-images.githubusercontent.com/14335370/154134597-cfa2a27c-b3da-4508-a29a-6fdab9741493.png)
 
-### `npm run eject`
+### Tela LoginPage
+![Captura de tela de 2022-02-17 22-53-44](https://user-images.githubusercontent.com/14335370/154602705-4dbd9025-46f6-4622-b692-1a3daec9183b.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Tela ApplicationFormPage
+![Captura de tela de 2022-02-17 22-57-14](https://user-images.githubusercontent.com/14335370/154602996-8913b290-72e8-4a1b-b8e5-5d7f2385bcf0.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Tela AdminHomePage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Captura de tela de 2022-02-17 22-58-34](https://user-images.githubusercontent.com/14335370/154603204-bf9e15ff-28df-47d5-bcf3-71f25c1d791b.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Tela CreateTripPage
+![Captura de tela de 2022-02-18 17-05-21](https://user-images.githubusercontent.com/14335370/154754052-713053cb-66f4-4d28-9303-48ade31e29ff.png)
 
-## Learn More
+### Tela TripDetailsPage
+![Captura de tela de 2022-02-21 07-52-27](https://user-images.githubusercontent.com/14335370/154941157-a4c1b6e5-de33-4500-a05c-f6f396cea28f.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🛠 Tecnologias
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+As seguintes ferramentas foram usadas na construção do projeto:
 
-### Code Splitting
+#### **Website**  ([ReactJs](https://reactjs.org/))
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-   **[React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)**
+-   **[React Icons](https://react-icons.github.io/react-icons/)**
+-   **[Axios](https://github.com/axios/axios)**
+-   **[swiper](https://swiperjs.com)**
+-   **[Antd](https://ant.design/)**
+-   **[styled-components](https://styled-components.com/)**
+-    **[Figma](https://www.figma.com/community)**
 
-### Analyzing the Bundle Size
+## 💪 Como contribuir para o projeto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Faça um **fork** do projeto.
+2. Crie uma nova branch com as suas alterações: `git checkout -b my-feature`
+3. Salve as alterações e crie uma mensagem de commit contando o que você fez: `git commit -m "feature: My new feature"`
+4. Envie as suas alterações: `git push origin my-feature`
+> Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](./CONTRIBUTING.md)
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🦸 Autor
 
-### Advanced Configuration
+<a href="https://github.com/HEINRICK7">
+ <img style="border-radius: 50%;" src="https://user-images.githubusercontent.com/14335370/153650468-2cdaf2d2-6ae6-47d3-b127-1ed03c1f6ca9.png" width="130px;" height="130px" alt="name"/>
+ <br />
+ <sub><b>Carlos Henrique</b></sub></a> <a href="https://github.com/HEINRICK7" title="gitHub">🚀</a>
+ <br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+[![Linkedin Badge](https://img.shields.io/badge/-Henrique-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/heinrickcostta/)](https://www.linkedin.com/in/heinrickcostta/) 
+---
+## 📝 Licença
 
-### Deployment
+Este projeto esta sobe a licença [MIT](./LICENSE).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Feito com ❤️ por Carlos Henrique 👋🏽 [Entre em contato!](https://www.linkedin.com/in/heinrickcostta/)
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##  Versões do README
+
+[Português 🇧🇷](./README.md)
