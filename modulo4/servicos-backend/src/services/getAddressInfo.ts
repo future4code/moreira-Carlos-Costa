@@ -1,16 +1,18 @@
 import axios from 'axios';
 import {Address} from '../types/Address'
+
 const baseUrl = "https://viacep.com.br/ws"
 
-export const getAddressInfo = async (zipcode: string): Promise<Address | null> => {
+export const getAddressInfo = async (cep: string): Promise<Address | null> => {
     try {
 
-        const response = await axios.get(`${baseUrl}/${zipcode}/json/`)
+        const response = await axios.get(`${baseUrl}/${cep}/json/`)
+        
         const address: Address ={
-            state:response.data.uf,
-            city: response.data.localidade,
-            district: response.data.bairro,
-            street: response.data.logradouro
+            estado:response.data.uf,
+            cidade: response.data.localidade,
+            bairro: response.data.bairro,
+            logradouro: response.data.logradouro
         }
         return address
     } catch (error) {

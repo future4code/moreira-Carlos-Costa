@@ -1,7 +1,7 @@
 export type Address = {
-    state: string,
-    city: string,
-    district: string,
-    street: string,
+    estado: string,
+    cidade: string,
+    logradouro: string,
+    bairro: string,
 
 }
