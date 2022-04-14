@@ -2,6 +2,7 @@ import {Request, Response} from "express"
 import {getAddressInfo} from "../services/getAddressInfo"
 import { connection } from "../data/connection"
 
+
 export const createUser = async(req:Request, res:Response) => {
     try {
         const {cep, numero, complemento} = req.body
@@ -20,7 +21,6 @@ export const createUser = async(req:Request, res:Response) => {
             estado: address?.estado
         })
 
-       
         if(!address){
             throw new Error("ERRO!")
         }
