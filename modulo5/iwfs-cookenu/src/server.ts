@@ -1,13 +1,10 @@
-import express from 'express'
-import cors from 'cors'
+import app from "./app"
+import { getProfile } from "./endpoints/getProfile"
+import { getUser } from "./endpoints/getUser"
+import { Login } from "./endpoints/login"
+import { Signup } from "./endpoints/signUp"
 
-const app = express()
-
-app.use(express.json())
-app.use(cors())
-
-app.listen(3003, ()=>{
-    console.log('Servidor rodando na porta 3003')
-})
-
-export default app
+app.post('/signup', Signup)
+app.post('/login', Login)
+app.get('/user/profile', getProfile)
+app.get('/user/:id', getUser)
