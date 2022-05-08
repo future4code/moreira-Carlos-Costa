@@ -10,7 +10,7 @@ export default class PostController {
     createPost = async(req: Request, res: Response) =>{
         const {photo, description, type} = req.body;
 
-        const input: SignupInputDTO ={
+        const input: SignupInputDTO = {
             name,
             email,
             password                 

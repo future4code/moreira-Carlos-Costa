@@ -3,7 +3,7 @@ import { IUserData } from "../model/interfaceUserData";
 import User from "../model/User";
 import { Authenticator } from "../services/Authenticator";
 import { HashManager } from "../services/HashManager";
-import { IdGenerator } from "../services/IdGenerator";
+import { IdGenerator } from "../services/idGenerator";
 import { SignupInputDTO } from "../types/signupInputDTO";
 
 export default class UserBusiness{
