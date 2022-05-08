@@ -1,4 +1,4 @@
-import UserBusiness from "./business/UserBusiness";
+import UserBusiness from "./business//UserBusiness";
 import { app } from "./controller/app";
 import UserController from "./controller/UserController";
 import UserData from "./data/UserData";
