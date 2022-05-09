@@ -43,4 +43,3 @@ export default class UserData extends BaseDatabase implements IUserData {
         }
     }
 }
-

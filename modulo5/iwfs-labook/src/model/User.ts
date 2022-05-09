@@ -27,7 +27,7 @@ export default class User{
     public set id(value: string) {
         this._id = value
     }
-
+    
     constructor(
         private _id: string,
         private _name: string,

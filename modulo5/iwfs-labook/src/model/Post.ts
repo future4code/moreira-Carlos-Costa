@@ -1,25 +1,32 @@
-export type authenticationData = {
-    id: string
-}
+export enum POST_ROLES {
+    NORMAL = "NORMAL",
+    EVENT = "EVENT",
+  }
 
-export default class User{
-    public get password(): string {
-        return this._password
+  export default class Post{
+    public get author_id(): string {
+        return this._author_id
     }
-    public set password(value: string) {
-        this._password = value
+    public set author_id(value: string) {
+        this._author_id = value
     }
-    public get email(): string {
-        return this._email
+    public get created_date(): Date {
+        return this._created_date
     }
-    public set email(value: string) {
-        this._email = value
+    public set created_date(value: Date) {
+        this._created_date = value
     }
-    public get name(): string {
-        return this._name
+    public get description(): string {
+        return this._description
     }
-    public set name(value: string) {
-        this._name = value
+    public set description(value: string) {
+        this._description = value
+    }
+    public get photo(): string {
+        return this._photo
+    }
+    public set photo(value: string) {
+        this._photo = value
     }
     public get id(): string {
         return this._id
@@ -27,11 +34,13 @@ export default class User{
     public set id(value: string) {
         this._id = value
     }
-
+    
     constructor(
         private _id: string,
-        private _name: string,
-        private _email: string,
-        private _password: string
+        private _photo: string,
+        private _description: string,
+        private _created_date?: Date,        
+        private _author_id?: string,
+        private _type?: POST_ROLES
     ){}
 }
